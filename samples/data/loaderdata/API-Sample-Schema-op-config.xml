@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages with Watson (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+
+<!-- 
+Object Types, Field Groups, Dependent Picklists and Dependencies
+for API sample data set.
+
+Provided objects:
+SOXBusEntity
+SOXProcess
+SOXTask
+SOXIssue
+SOXRisk
+KeyRiskIndicator
+KeyRiskIndicatorValue
+LossEvent
+LossImpact
+
+-->
+
+<openpagesConfiguration xmlFormatVersion="1.31">
+<systemAdminMode enabled="true"/>
+<bundleTypes>
+	<!-- SOXBusEntity -->
+	<bundleType description="Processed by AFCON" name="OPSS-BusEnt" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Entity Type may be used to categorize the entity's level in the entity hierarchy." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Entity Type" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Entity Type">
+                    <enumValue displayOrder="1" hidden="false" name="Audit" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Business" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Legal" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Library" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Location" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate one or more contexts where this Business Entity is in scope." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="In Scope" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="In Scope">
+                    <enumValue displayOrder="1" hidden="false" name="Compliance" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="ORM" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="IT" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="SOX" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Executive Owner may be used to assign the highest level of responsibility for the entity." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Executive Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the person responsible for Compliance within this Business Entity.assign the highest level of responsibility for the entity." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Compliance Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to reference the location of the logo for this Business Entity." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Logo URL" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="Use to indicate the appetite for risk for this business entity and its children." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Risk Appetite" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+	<!-- End SOXBusEntity -->
+
+	<!-- SOXProcess -->
+	<bundleType description="Processed by AFCON" name="OPSS-Process" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Additional Description may be used to provide HTML formatted information about the process/cycle." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Additional Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person to the highest level of responsibility for this process or cycle." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Process Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which areas apply to this process." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Domain" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Domain">
+                    <enumValue displayOrder="1" hidden="false" name="Operational" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Technology" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Financial Management" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Compliance" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Internal Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate one or more contexts where this Process is in scope." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="In Scope" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="In Scope">
+                    <enumValue displayOrder="1" hidden="false" name="Compliance" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="ORM" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="IT" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="SOX" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate why the process is included in or excluded from scope." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Scope Rationale" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate why the process is included in or excluded from scope." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="SOX Scope Rationale" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+	<!-- End SOXProcess -->	
+
+	<!-- SOXTask -->
+	<bundleType description="Processed by AFCON" name="OPSS-AI" suppliedByVendor="false" type="Content Type">
+        <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit additional information about this action item." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Additional Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when the work on this action item started." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Start Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to indicate the date after which this issue action item is overdue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Due Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to set the expected completion date for this action item." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Expected Completion Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when the work on this action item was actually completed." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Actual Completion Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for this action item." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Assignee" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        <propertyType currencyCode="" dataLength="" dataType="Integer" defaultValue="0" description="Use to indicate the progress of this action item.  Enter a numeric value between 0 and 100." includeConversion="true" isDimension="false" isFact="true" maxValue="100" minValue="0" multiValued="false" name="Percent Complete" required="false" suppliedByVendor="false" searchEnabled="true"/>
+    </bundleType>
+	<!-- End SOXTask -->
+
+	<!-- SOXIssue -->
+	<bundleType description="Processed by AFCON" name="OPSS-Iss" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit additional information about this issue." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Additional Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="1" description="Use to set the current status of this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Status" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Status">
+                    <enumValue displayOrder="1" hidden="false" name="Open" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Closed" value="2"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which areas apply to this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Domain" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Domain">
+                    <enumValue displayOrder="1" hidden="false" name="Compliance" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Operational" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Technology" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Financial Management" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Internal Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for this issue." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Assignee" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to identify the nature of the issue as it relates to the activity that initially generated the issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Issue Type" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Issue Type">
+                    <enumValue displayOrder="1" hidden="false" name="Design Effectiveness" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Control Activity Missing" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Operating Effectiveness" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Scoping" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Other" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Regulatory" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Investigation" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="Review Comment" value="8"/>
+                    <enumValue displayOrder="9" hidden="false" name="Policy/Standard Violation" value="9"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the person who identified the issue." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Identified By Individual" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate the group that identified the issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Identified By Group" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Identified By Group">
+                    <enumValue displayOrder="1" hidden="false" name="Internal Audit" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="External Audit" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Business Unit" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Compliance Management" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Risk Management" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="IT" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Other" value="7"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="3" description="Use to indicate the likelihood of this issue re-occurring." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Probability" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Probability">
+                    <enumValue displayOrder="1" hidden="false" name="Likely" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Unlikely" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Not Determined" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="Use to indicate the severity of the impact of the issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Impact" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Impact">
+                    <enumValue displayOrder="1" hidden="false" name="Significant" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="More Than Inconsequential" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Inconsequential" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to objectively select the primary reason for the issue to have arisen." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Root Cause Type" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Root Cause Type">
+                    <enumValue displayOrder="1" hidden="false" name="Policies not being adhered to" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Established business process not being followed" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Adequate business process not established" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Policies can be improved" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Policies do not exist" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Established business process can be improved" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Unknown" value="7"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to subjectively describe the primary reason for the issue to have arisen." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Root Cause Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to indicate the target date for closing this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Due Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate the status of the resolution for this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Resolution Status" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Resolution Status">
+                    <enumValue displayOrder="1" hidden="false" name="Evaluation in Progress" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Remediated - Pending Testing" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Closed" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Risk Accepted" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Deferred" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="5" description="Use to indicate the final outcome of this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Conclusion" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Conclusion">
+                    <enumValue displayOrder="1" hidden="false" name="Deficiency" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Significant Deficiency" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Material Weakness" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not a Deficiency" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Not Determined" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="Use to indicate the level of urgency for this issue." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Priority" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Priority">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit a summary of the management remediation plan for this issue." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Management Response" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+		
+		<!-- End SOXIssue -->
+		
+		<!-- SOXRisk -->
+		<bundleType description="Processed by AFCON" name="OPSS-Rsk" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit additional information about this risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Additional Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which areas apply to this risk." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Domain" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Domain">
+                    <enumValue displayOrder="1" hidden="false" name="Compliance" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Operational" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Technology" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Financial Management" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Internal Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for this risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+		
+		<!-- Also shared by: KeyRiskIndicator, LossEvent -->
+		<bundleType description="Processed by AFCON" name="OPSS-Shared-Basel" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Risk Category" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Risk Category">
+                    <enumValue displayOrder="1" hidden="false" name="Internal Fraud" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="External Fraud" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Employment Practices and Workplace Safety" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Clients, Products and Business Practices" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Damage to Physical Assets" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Business Disruption and System Failures" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Execution, Delivery and Process Management" value="7"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Risk Sub-Category" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Risk Subcategory" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Risk Subcategory">
+                    <enumValue displayOrder="1" hidden="false" name="Product Flaws" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Selection, Sponsorship and Exposure" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Vendors and Suppliers" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Systems Security" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Trade Counterparties" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Employee Relations" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Safe Environment" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="Transaction/Data Management" value="8"/>
+                    <enumValue displayOrder="9" hidden="false" name="Willful Damage" value="9"/>
+                    <enumValue displayOrder="10" hidden="false" name="Improper Business or Market Practices" value="10"/>
+                    <enumValue displayOrder="11" hidden="false" name="Infrastructure and Systems" value="11"/>
+                    <enumValue displayOrder="12" hidden="false" name="Customer/Client Account Management" value="12"/>
+                    <enumValue displayOrder="13" hidden="false" name="Reporting and Disclosure" value="13"/>
+                    <enumValue displayOrder="14" hidden="false" name="Suitability, Disclosures and Fiduciary" value="14"/>
+                    <enumValue displayOrder="15" hidden="false" name="Diversity and Discrimination" value="15"/>
+                    <enumValue displayOrder="16" hidden="false" name="Theft and Fraud" value="16"/>
+                    <enumValue displayOrder="17" hidden="false" name="Advisory Activities" value="17"/>
+                    <enumValue displayOrder="18" hidden="false" name="Unauthorized Activity" value="18"/>
+                    <enumValue displayOrder="19" hidden="false" name="Customer Intake and Documentation" value="19"/>
+                    <enumValue displayOrder="20" hidden="false" name="Disaster and other events" value="20"/>
+                </enumType>
+            </propertyType>
+        </bundleType>
+
+		<bundleType description="Processed by AFCON" name="OPSS-Risk-Fin" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate one or more contexts where this Risk is in scope." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="In Scope" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="In Scope">
+                    <enumValue displayOrder="1" hidden="false" name="Compliance" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="ORM" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="IT" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="SOX" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Audit" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which financial statement assertions are affected by this risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="true" name="Financial Statement Assertions" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Financial Statement Assertions">
+                    <enumValue displayOrder="1" hidden="false" name="Existence" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Occurrence" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Completeness" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Accuracy" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Valuation or Measurement" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Rights" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Obligations" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="Presentation and Disclosure" value="8"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit text that provides control designers with information about how this risk can be best mitigated." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="General Guidance" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+
+		<bundleType description="Processed by AFCON" name="OPSS-Risk-Qual" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the degree of severity of the risk if not mitigated by adequate and effective controls." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Inherent Impact" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Inherent Impact">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the severity of the risk after it is mitigated by adequate and effective controls. This value is used to compute the Residual Risk Rating field." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Residual Impact" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Residual Impact">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the probability of this risk occurring if not mitigated by adequate and effective controls." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Inherent Likelihood" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Inherent Likelihood">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the probability of this risk occurring after it is mitigated by adequate and effective controls. This value is used to compute the Residual Risk Rating field." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Residual Likelihood" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Residual Likelihood">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field which is set to the combination of the Inherent Impact and Inherent Likelihood of this risk materializing." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Inherent Risk Rating" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Inherent Risk Rating">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field which is set to the combination of the Residual Impact and Residual Likelihood of this risk materializing." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Residual Risk Rating" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Residual Risk Rating">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+        </bundleType>
+		<bundleType description="Processed by AFCON" name="OPSS-Risk-Aud" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the degree of severity of the risk if not mitigated by adequate and effective controls.  Use to capture the opinion of Internal Audit." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Inherent Impact" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Inherent Impact">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the severity of the risk after it is mitigated by adequate and effective controls. This value is used to compute the Audit Residual Risk Rating field.   Use to capture the opinion of Internal Audit." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Residual Impact" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Residual Impact">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the probability of this risk occurring if not mitigated by adequate and effective controls.  Use to capture the opinion of Internal Audit." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Inherent Likelihood" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Inherent Likelihood">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to capture the probability of this risk occurring after it is mitigated by adequate and effective controls. This value is used to compute the Audit Residual Risk Rating field.  Use to capture the opinion of Internal Audit." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Residual Likelihood" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Residual Likelihood">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field which is set to the combination of the Audit Inherent Impact and Audit Inherent Likelihood of this risk materializing." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Inherent Risk Rating" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Inherent Risk Rating">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field which is set to the combination of the Audit Residual Impact and Audit Residual Likelihood of this risk materializing." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Audit Residual Risk Rating" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Audit Residual Risk Rating">
+                    <enumValue displayOrder="1" hidden="false" name="High" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Medium" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Low" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+        </bundleType>
+
+		<bundleType description="Processed by AFCON" name="OPSS-Risk-Quant" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="Use to measure the number of times within a reporting year that this risk is likely to occur before controls are applied. Enter a numeric value. For example, the number 1 would indicate once a year, 2 for twice a year. This value is used to compute the Inherent Risk Exposure field." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Inherent Frequency" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="Use to measure the number of times within a reporting year that this risk is likely to occur after controls are applied. Enter a numeric value. For example, the number 1 would indicate once a year, 2 for twice a year. This value is used to compute the Residual Risk Exposure field." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Residual Frequency" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="Use to measure the amount of financial exposure or loss that could result from this risk before controls are applied. This value is used to compute the Inherent Risk Exposure field." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Inherent Severity" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="Use to measure the amount of financial exposure or loss that could result from this risk after controls are applied. This value is used to compute the Residual Risk Exposure field." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Residual Severity" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field which is set to the combination of the Inherent Frequency and Inherent Severity of this risk materializing." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Inherent Risk Exposure" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field which is set to the combination of the Residual Frequency and Residual Severity of this risk materializing." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Residual Risk Exposure" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+
+		<bundleType description="Processed by AFCON" name="OPSS-Risk-Accp" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Within Tolerance" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Within Tolerance">
+                    <enumValue displayOrder="1" hidden="false" name="Yes" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="No" value="2"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate whether the residual risk is acceptable and if not what treatment is appropriate." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Acceptance" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Acceptance">
+                    <enumValue displayOrder="1" hidden="false" name="Accept" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Avoid" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Mitigate" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Transfer" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate why the residual risk is accepted even though it may be above threshold." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Reason for Acceptance" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+
+		<bundleType description="Processed by AFCON" name="OPSS-Risk" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate the risk domain for this Risk." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Functional Risk Area" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Functional Risk Area">
+                    <enumValue displayOrder="1" hidden="false" name="Architecture" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Asset Management" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Business Continuity Management" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Change Management" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Contracting &amp; Outsourcing" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Information Security" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="IT Financial Control" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="IT Human Resources" value="8"/>
+                    <enumValue displayOrder="9" hidden="false" name="IT Risk Management" value="9"/>
+                    <enumValue displayOrder="10" hidden="false" name="Operations" value="10"/>
+                    <enumValue displayOrder="11" hidden="false" name="Physical &amp; Environmental" value="11"/>
+                    <enumValue displayOrder="12" hidden="false" name="Privacy &amp; Data Protection" value="12"/>
+                    <enumValue displayOrder="13" hidden="false" name="Problem Management" value="13"/>
+                    <enumValue displayOrder="14" hidden="false" name="Project Management" value="14"/>
+                    <enumValue displayOrder="15" hidden="false" name="Records Management" value="15"/>
+                    <enumValue displayOrder="16" hidden="false" name="Technology Licensing" value="16"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="In the context of the relevant Baseline" includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Baseline Risk Statement" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="From the relevant Requirement" includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Risk Statement" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="As implemented in the business operations" includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Implemented Risk Statement" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the control objective addressed by this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Control Objective" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 1 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the second highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 2 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the third highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 3 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the fourth highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 4 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the fifth highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 5 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the sixth highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 6 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the seventh highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 7 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to indicate the eighth highest category level for this Risk." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Level 8 Category" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+		<!-- end SOXRisk -->
+
+		<!-- KeyRiskIndicator -->
+		<bundleType description="Processed by AFCON" name="OPSS-KRI" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for this KRI." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field which is calculated based upon the relationship between the two most recent KRI Values." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Indicator Trend" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Indicator Trend">
+                    <enumValue displayOrder="1" hidden="false" name="Better" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Worse" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Steady" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="This is a read only field which is populated based upon the most recent KRI Value." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Value" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="This is a read only field which is populated based upon the most recent KRI Value." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Value Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit the origin of the data for this KRI." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Data Source" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate whether the indicator is deemed to be leading, lagging or a current indicator of risk." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Nature" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Nature">
+                    <enumValue displayOrder="1" hidden="false" name="All" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Current" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Lagging" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Leading" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate how often the measurement data for this KRI is collected or gathered." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Frequency" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Frequency">
+                    <enumValue displayOrder="1" hidden="false" name="Multiple times a day" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Daily" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Weekly" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Monthly" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Quarterly" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Annually" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Ad-hoc" value="7"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Integer" defaultValue="" description="Use to indicate how many days after the start of each period the KRI data should be collected." includeConversion="true" isDimension="false" isFact="false" maxValue="365" minValue="0" multiValued="false" name="Frequency Offset Days" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to set the unit of measure for the threshold and target values." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Unit of Measure" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Unit of Measure">
+                    <enumValue displayOrder="1" hidden="false" name="Number" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Percentage" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Duration" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Ratio" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit a range of valid values for this KRI." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Value Range" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit any conditions, requirements, exclusions, or rules that apply to the calculation of the indicator value.  For example, you could use this area to list an indicator value that includes everything of one class or type but excludes another class or type, or data that is required to be measured in a specific sequence or constructed over a given time period." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Measurement Rules" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+		<!-- Also shared by: KeyRiskIndicatorValue -->
+		<bundleType description="Processed by AFCON" name="OPSS-KRI-Shared" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="1" description="This field value is entered on the KRI Value and read only on the KRI." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Collection Status" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Collection Status">
+                    <enumValue displayOrder="1" hidden="false" name="Not Collected" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Collected" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Approved" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="4" description="This is a read only field calculated by comparing the Value with the Red and Yellow Thresholds, taking into account the Direction Information." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Breach Status" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Breach Status">
+                    <enumValue displayOrder="1" hidden="false" name="Red" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Yellow" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Green" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Not Determined" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate the meaning of directional trends in the values measured by this KRI.  This field is read only on the KRI Value." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Direction Information" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Direction Information">
+                    <enumValue displayOrder="1" hidden="false" name="Increase means greater risk" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Decrease means greater risk" value="2"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="Use to enter a decimal value that represents the goal for this KRI (that is, what the company would have to achieve for normal functioning).  Better than this value is Green; worse than this value is Yellow.  This field is read only on the KRI Value." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Yellow Threshold" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="Use to enter a decimal value that represents a marginal level for this KRI.  Better than this value is Yellow; worse than this value is Red.  This field is read only on the KRI Value." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Red Threshold" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+
+		<!-- end KeyRiskIndicator -->
+
+		<!-- KeyRiskIndicatorValue -->
+		<bundleType description="Processed by AFCON" name="OPSS-KRIVal" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Decimal" defaultValue="" description="Use to enter a decimal value that represents the most recent value for this indicator." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Value" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date on which this indicator was measured." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Value Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="1" description="Set this field to No to disable KRI Value triggers." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Trigger Run" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Trigger Run">
+                    <enumValue displayOrder="1" hidden="false" name="Yes" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="No" value="2"/>
+                </enumType>
+            </propertyType>
+        </bundleType>
+		<!-- end KeyRiskIndicatorValue -->
+
+		<!-- Loss Event -->
+		<bundleType description="Processed by AFCON" name="OPSS-LossEv" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for this loss event." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Owner" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to assign a person ownership or responsibility for signing off on this loss event." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Approver" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="1" description="Use to set the current status of this loss event." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Status" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Status">
+                    <enumValue displayOrder="1" hidden="false" name="Not Started" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="In Progress" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Under Review" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Approved" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Rejected" value="5"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate whether this loss event was a near miss or whether it resulted in a loss or gain." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Outcome" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Outcome">
+                    <enumValue displayOrder="1" hidden="false" name="Loss" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Near Miss" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Gain" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit a description of the circumstances surrounding this loss event." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="What Happened" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Causal Category" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Causal Category">
+                    <enumValue displayOrder="1" hidden="false" name="Process" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="People" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Systems" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="External" value="4"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Causal Subcategory" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Causal Subcategory">
+                    <enumValue displayOrder="1" hidden="false" name="Process - Inefficient/ineffective process design" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Process - Inadequate delivery of outsourced activities" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Process - Insufficient customer assessment" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="People - Employee error" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="People - Employee fraud and misconduct" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="People - Lack of intellectual capital" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="People - Lack of dealer roles and responsibilities" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="People - Deficient values, integrity and ethics" value="8"/>
+                    <enumValue displayOrder="9" hidden="false" name="People - Insufficient oversight and accountability" value="9"/>
+                    <enumValue displayOrder="10" hidden="false" name="People - Inappropriate performance incentives" value="10"/>
+                    <enumValue displayOrder="11" hidden="false" name="People - Inadequate workplace safety" value="11"/>
+                    <enumValue displayOrder="12" hidden="false" name="Systems - Unavailability and instability of systems" value="12"/>
+                    <enumValue displayOrder="13" hidden="false" name="Systems - Lack of information integrity" value="13"/>
+                    <enumValue displayOrder="14" hidden="false" name="Systems - Inappropriate infrastructure" value="14"/>
+                    <enumValue displayOrder="15" hidden="false" name="Systems - Lack of timely and relevant information" value="15"/>
+                    <enumValue displayOrder="16" hidden="false" name="Systems - Inadequate data security and access" value="16"/>
+                    <enumValue displayOrder="17" hidden="false" name="Systems - Inappropriate data usage" value="17"/>
+                    <enumValue displayOrder="18" hidden="false" name="External - Natural disasters/Catastrophic events/Terrorist attacks" value="18"/>
+                    <enumValue displayOrder="19" hidden="false" name="External - Key supplier and partner exposure" value="19"/>
+                    <enumValue displayOrder="20" hidden="false" name="External - Competitor actions" value="20"/>
+                    <enumValue displayOrder="21" hidden="false" name="External - Political/economic impacts" value="21"/>
+                    <enumValue displayOrder="22" hidden="false" name="External - Unresponsive to legal/regulatory compliance changes" value="22"/>
+                    <enumValue displayOrder="23" hidden="false" name="External - Product misuse" value="23"/>
+                    <enumValue displayOrder="24" hidden="false" name="External - Physical asset misuse or theft" value="24"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="" includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Business Line" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Business Line">
+                    <enumValue displayOrder="1" hidden="false" name="Agency Services" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Asset Management" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Commercial Banking" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Corporate Finance" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Payment and Settlement" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Retail Banking" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Retail Brokerage" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="Trading and Sales" value="8"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when this loss event was discovered or noticed." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Discovery Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when this loss event was recognized (in the GL)." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Recognition Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the first date when this loss event took place." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Occurrence Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the last date when this loss event took place." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Occurrence End Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field calculated by subtracting the Recovery Amount from the Gross Loss." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Net Loss" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field calculated by adding the Actual Loss from all child Loss Impacts." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Gross Loss" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field calculated by adding the Actual Recovery Amount from all child Loss Recoveries." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Recovery Amount" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="This is a read only field calculated by adding the Estimated Loss from all child Loss Impacts." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Estimated Gross Loss" required="false" suppliedByVendor="false" searchEnabled="true"/>
+        </bundleType>
+		<!-- End LossEvent -->
+
+		<!-- LossImpact -->
+		<bundleType description="Processed by AFCON" name="OPSS-LossIm" suppliedByVendor="false" type="Content Type">
+            <propertyType currencyCode="" dataLength="" dataType="Simple String" defaultValue="" description="Use to enter or edit additional information about the impact of this loss." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Additional Description" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which category applies to the loss resulting from this impact." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Effect Category" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Effect Category">
+                    <enumValue displayOrder="1" hidden="false" name="Financial" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Brand" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Legal/Regulatory" value="3"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="" description="Use to indicate which subcategory applies to the loss resulting from this impact." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="true" name="Effect Subcategory" required="false" suppliedByVendor="false">
+                <enumType description="" name="Effect Subcategory">
+                    <enumValue displayOrder="1" hidden="false" name="Direct losses" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="Indirect losses" value="2"/>
+                    <enumValue displayOrder="3" hidden="false" name="Damaged public perception" value="3"/>
+                    <enumValue displayOrder="4" hidden="false" name="Decreased investor, lender, partner confidence" value="4"/>
+                    <enumValue displayOrder="5" hidden="false" name="Customer dissatisfaction" value="5"/>
+                    <enumValue displayOrder="6" hidden="false" name="Negative media publicity" value="6"/>
+                    <enumValue displayOrder="7" hidden="false" name="Damaged employee morale" value="7"/>
+                    <enumValue displayOrder="8" hidden="false" name="Sanctions" value="8"/>
+                    <enumValue displayOrder="9" hidden="false" name="Lawsuits/Class action" value="9"/>
+                    <enumValue displayOrder="10" hidden="false" name="Fines" value="10"/>
+                    <enumValue displayOrder="11" hidden="false" name="Loss of license" value="11"/>
+                </enumType>
+            </propertyType>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when this loss impact took place." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Occurrence Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Date" defaultValue="" description="Use to record the date when this loss impact was discovered or noticed." includeConversion="true" isDimension="true" isFact="false" maxValue="" minValue="" multiValued="false" name="Discovery Date" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="Use to enter an initial estimate of the magnitude of the loss." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Estimated Loss" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="USD" dataLength="" dataType="Currency" defaultValue="" description="Use to enter the actual magnitude of the loss." includeConversion="true" isDimension="false" isFact="true" maxValue="" minValue="" multiValued="false" name="Actual Loss" required="false" suppliedByVendor="false" searchEnabled="true"/>
+            <propertyType currencyCode="" dataLength="" dataType="Enumerated String" defaultValue="1" description="Set to No to disable Loss Impact triggers." includeConversion="true" isDimension="false" isFact="false" maxValue="" minValue="" multiValued="false" name="Trigger Run" required="false" suppliedByVendor="false" searchEnabled="true">
+                <enumType description="" name="Trigger Run">
+                    <enumValue displayOrder="1" hidden="false" name="Yes" value="1"/>
+                    <enumValue displayOrder="2" hidden="false" name="No" value="2"/>
+                </enumType>
+            </propertyType>
+        </bundleType>
+		<!-- End LossImpact -->
+</bundleTypes>
+<!-- Content Type -->
+<jspBasedContentTypes>
+<contentType category="Master" description="OpenPages GRC Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="SOXBusEntity" rootFolder="/_op_sox/Project/Default/BusinessEntity" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-BusEnt"/>
+        </contentType>
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="SOXProcess" rootFolder="/_op_sox/Project/Default/ICDocumentation/Processes" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-Process"/>
+        </contentType>
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="SOXRisk" rootFolder="/_op_sox/Project/Default/ICDocumentation/Risks" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-Rsk"/>
+            <bundleTypeAssignment name="OPSS-Shared-Basel"/>
+            <bundleTypeAssignment name="OPSS-Risk-Fin"/>
+            <bundleTypeAssignment name="OPSS-Risk-Qual"/>
+            <bundleTypeAssignment name="OPSS-Risk-Aud"/>
+            <bundleTypeAssignment name="OPSS-Risk-Quant"/>
+            <bundleTypeAssignment name="OPSS-Risk-Accp"/>
+            <bundleTypeAssignment name="OPSS-Risk"/>
+        </contentType>
+
+<!-- Issues -->
+<contentType category="Secondary Compliance" description="OpenPages GRC Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="SOXIssue" rootFolder="/_op_sox/Project/Default/Issue" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-Iss"/>
+        </contentType>
+		<contentType category="Secondary Compliance" description="OpenPages GRC Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="SOXTask" rootFolder="/_op_sox/Project/Default/IssueActionItems" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-AI"/>
+        </contentType>
+
+<!-- KRIs -->
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="KeyRiskIndicator" rootFolder="/_op_sox/Project/Default/ICDocumentation/KRI's" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-Shared-Basel"/>
+            <bundleTypeAssignment name="OPSS-KRI"/>
+            <bundleTypeAssignment name="OPSS-KRI-Shared"/>
+        </contentType>
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="KeyRiskIndicatorValue" rootFolder="/_op_sox/Project/Default/ICDocumentation/KRI Values" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-KRIVal"/>
+            <bundleTypeAssignment name="OPSS-KRI-Shared"/>
+        </contentType>
+
+<!-- Loss Events -->
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="LossEvent" rootFolder="/_op_sox/Project/Default/ICDocumentation/Loss Events" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-LossEv"/>
+            <bundleTypeAssignment name="OPSS-Shared-Basel"/>
+        </contentType>
+<contentType category="Compliance" description="Unified Object Type" jspPath="/propertyForm/renderProperties.jsp" multiVersionable="true" name="LossImpact" rootFolder="/_op_sox/Project/Default/ICDocumentation/Loss Impacts" suppliedByVendor="true" searchEnabled="true">
+            <bundleTypeAssignment name="OPSS-LossIm"/>
+        </contentType>
+</jspBasedContentTypes>
+<systemAdminMode enabled="false"/>
+    <dependentPicklists explicitListing="false">
+
+	<!-- SOXRisk -->
+	<dependentPicklistSet objectType="SOXRisk">
+            <dependentPicklist controllingField="Risk Category" controllingFieldGroup="OPSS-Shared-Basel" dependentField="Risk Subcategory" dependentFieldGroup="OPSS-Shared-Basel" enabled="true" isDimension="true" suppliedByVendor="false">
+                <controllingValue name="Internal Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Unauthorized Activity"/>
+                </controllingValue>
+                <controllingValue name="Execution, Delivery and Process Management">
+                    <dependentValue name="Transaction/Data Management"/>
+                    <dependentValue name="Reporting and Disclosure"/>
+                    <dependentValue name="Vendors and Suppliers"/>
+                    <dependentValue name="Customer Intake and Documentation"/>
+                    <dependentValue name="Customer/Client Account Management"/>
+                    <dependentValue name="Trade Counterparties"/>
+                </controllingValue>
+                <controllingValue name="Business Disruption and System Failures">
+                    <dependentValue name="Infrastructure and Systems"/>
+                </controllingValue>
+                <controllingValue name="Damage to Physical Assets">
+                    <dependentValue name="Disaster and other events"/>
+                    <dependentValue name="Willful Damage"/>
+                </controllingValue>
+                <controllingValue name="Employment Practices and Workplace Safety">
+                    <dependentValue name="Safe Environment"/>
+                    <dependentValue name="Employee Relations"/>
+                    <dependentValue name="Diversity and Discrimination"/>
+                </controllingValue>
+                <controllingValue name="External Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Systems Security"/>
+                </controllingValue>
+                <controllingValue name="Clients, Products and Business Practices">
+                    <dependentValue name="Product Flaws"/>
+                    <dependentValue name="Improper Business or Market Practices"/>
+                    <dependentValue name="Advisory Activities"/>
+                    <dependentValue name="Suitability, Disclosures and Fiduciary"/>
+                    <dependentValue name="Selection, Sponsorship and Exposure"/>
+                </controllingValue>
+            </dependentPicklist>
+        </dependentPicklistSet>
+		<!-- End SOXRisk -->
+
+		<dependentPicklistSet objectType="KeyRiskIndicator">
+            <dependentPicklist controllingField="Risk Category" controllingFieldGroup="OPSS-Shared-Basel" dependentField="Risk Subcategory" dependentFieldGroup="OPSS-Shared-Basel" enabled="true" isDimension="true" suppliedByVendor="false">
+                <controllingValue name="Internal Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Unauthorized Activity"/>
+                </controllingValue>
+                <controllingValue name="Execution, Delivery and Process Management">
+                    <dependentValue name="Transaction/Data Management"/>
+                    <dependentValue name="Reporting and Disclosure"/>
+                    <dependentValue name="Vendors and Suppliers"/>
+                    <dependentValue name="Customer Intake and Documentation"/>
+                    <dependentValue name="Customer/Client Account Management"/>
+                    <dependentValue name="Trade Counterparties"/>
+                </controllingValue>
+                <controllingValue name="Business Disruption and System Failures">
+                    <dependentValue name="Infrastructure and Systems"/>
+                </controllingValue>
+                <controllingValue name="Damage to Physical Assets">
+                    <dependentValue name="Disaster and other events"/>
+                    <dependentValue name="Willful Damage"/>
+                </controllingValue>
+                <controllingValue name="Employment Practices and Workplace Safety">
+                    <dependentValue name="Safe Environment"/>
+                    <dependentValue name="Employee Relations"/>
+                    <dependentValue name="Diversity and Discrimination"/>
+                </controllingValue>
+                <controllingValue name="External Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Systems Security"/>
+                </controllingValue>
+                <controllingValue name="Clients, Products and Business Practices">
+                    <dependentValue name="Product Flaws"/>
+                    <dependentValue name="Improper Business or Market Practices"/>
+                    <dependentValue name="Advisory Activities"/>
+                    <dependentValue name="Suitability, Disclosures and Fiduciary"/>
+                    <dependentValue name="Selection, Sponsorship and Exposure"/>
+                </controllingValue>
+            </dependentPicklist>
+        </dependentPicklistSet>
+		<!-- End KeyRiskIndicator -->
+		
+		<dependentPicklistSet objectType="LossEvent">
+            <dependentPicklist controllingField="Risk Category" controllingFieldGroup="OPSS-Shared-Basel" dependentField="Risk Subcategory" dependentFieldGroup="OPSS-Shared-Basel" enabled="true" isDimension="true" suppliedByVendor="false">
+                <controllingValue name="Internal Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Unauthorized Activity"/>
+                </controllingValue>
+                <controllingValue name="Execution, Delivery and Process Management">
+                    <dependentValue name="Transaction/Data Management"/>
+                    <dependentValue name="Reporting and Disclosure"/>
+                    <dependentValue name="Vendors and Suppliers"/>
+                    <dependentValue name="Customer Intake and Documentation"/>
+                    <dependentValue name="Customer/Client Account Management"/>
+                    <dependentValue name="Trade Counterparties"/>
+                </controllingValue>
+                <controllingValue name="Business Disruption and System Failures">
+                    <dependentValue name="Infrastructure and Systems"/>
+                </controllingValue>
+                <controllingValue name="Damage to Physical Assets">
+                    <dependentValue name="Disaster and other events"/>
+                    <dependentValue name="Willful Damage"/>
+                </controllingValue>
+                <controllingValue name="Employment Practices and Workplace Safety">
+                    <dependentValue name="Safe Environment"/>
+                    <dependentValue name="Employee Relations"/>
+                    <dependentValue name="Diversity and Discrimination"/>
+                </controllingValue>
+                <controllingValue name="External Fraud">
+                    <dependentValue name="Theft and Fraud"/>
+                    <dependentValue name="Systems Security"/>
+                </controllingValue>
+                <controllingValue name="Clients, Products and Business Practices">
+                    <dependentValue name="Product Flaws"/>
+                    <dependentValue name="Improper Business or Market Practices"/>
+                    <dependentValue name="Advisory Activities"/>
+                    <dependentValue name="Suitability, Disclosures and Fiduciary"/>
+                    <dependentValue name="Selection, Sponsorship and Exposure"/>
+                </controllingValue>
+            </dependentPicklist>
+            <dependentPicklist controllingField="Causal Category" controllingFieldGroup="OPSS-LossEv" dependentField="Causal Subcategory" dependentFieldGroup="OPSS-LossEv" enabled="true" isDimension="true" suppliedByVendor="false">
+                <controllingValue name="Process">
+                    <dependentValue name="Process - Insufficient customer assessment"/>
+                    <dependentValue name="Process - Inadequate delivery of outsourced activities"/>
+                    <dependentValue name="Process - Inefficient/ineffective process design"/>
+                </controllingValue>
+                <controllingValue name="Systems">
+                    <dependentValue name="Systems - Unavailability and instability of systems"/>
+                    <dependentValue name="Systems - Inadequate data security and access"/>
+                    <dependentValue name="Systems - Inappropriate data usage"/>
+                    <dependentValue name="Systems - Lack of information integrity"/>
+                    <dependentValue name="Systems - Lack of timely and relevant information"/>
+                    <dependentValue name="Systems - Inappropriate infrastructure"/>
+                </controllingValue>
+                <controllingValue name="People">
+                    <dependentValue name="People - Employee error"/>
+                    <dependentValue name="People - Lack of intellectual capital"/>
+                    <dependentValue name="People - Insufficient oversight and accountability"/>
+                    <dependentValue name="People - Lack of dealer roles and responsibilities"/>
+                    <dependentValue name="People - Inadequate workplace safety"/>
+                    <dependentValue name="People - Inappropriate performance incentives"/>
+                    <dependentValue name="People - Employee fraud and misconduct"/>
+                    <dependentValue name="People - Deficient values, integrity and ethics"/>
+                </controllingValue>
+                <controllingValue name="External">
+                    <dependentValue name="External - Key supplier and partner exposure"/>
+                    <dependentValue name="External - Unresponsive to legal/regulatory compliance changes"/>
+                    <dependentValue name="External - Competitor actions"/>
+                    <dependentValue name="External - Political/economic impacts"/>
+                    <dependentValue name="External - Natural disasters/Catastrophic events/Terrorist attacks"/>
+                    <dependentValue name="External - Physical asset misuse or theft"/>
+                    <dependentValue name="External - Product misuse"/>
+                </controllingValue>
+            </dependentPicklist>
+        </dependentPicklistSet>
+		<!-- End LossEvent -->
+		<dependentPicklistSet objectType="LossImpact">
+            <dependentPicklist controllingField="Effect Category" controllingFieldGroup="OPSS-LossIm" dependentField="Effect Subcategory" dependentFieldGroup="OPSS-LossIm" enabled="true" isDimension="true" suppliedByVendor="false">
+                <controllingValue name="Financial">
+                    <dependentValue name="Indirect losses"/>
+                    <dependentValue name="Direct losses"/>
+                </controllingValue>
+                <controllingValue name="Legal/Regulatory">
+                    <dependentValue name="Fines"/>
+                    <dependentValue name="Sanctions"/>
+                    <dependentValue name="Lawsuits/Class action"/>
+                    <dependentValue name="Loss of license"/>
+                </controllingValue>
+                <controllingValue name="Brand">
+                    <dependentValue name="Negative media publicity"/>
+                    <dependentValue name="Damaged public perception"/>
+                    <dependentValue name="Customer dissatisfaction"/>
+                    <dependentValue name="Decreased investor, lender, partner confidence"/>
+                    <dependentValue name="Damaged employee morale"/>
+                </controllingValue>
+            </dependentPicklist>
+        </dependentPicklistSet>
+		<!-- LossImpact -->
+	</dependentPicklists>
+	<dependencies explicitListing="false">
+		<!-- SOXRisk -->
+		<dependencySet objectType="SOXRisk">
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Risk-Accp" name="Within Tolerance">
+                        <controllerValue name="No"/>
+                    </controller>
+                    <controller fieldGroup="OPSS-Risk-Accp" name="Acceptance">
+                        <controllerValue name="Accept"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Risk-Accp" name="Reason for Acceptance" type="REQUIRED"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Risk-Accp" name="Within Tolerance">
+                        <controllerValue name="No"/>
+                    </controller>
+                    <controller fieldGroup="OPSS-Risk-Accp" name="Acceptance">
+                        <controllerValue name="Accept"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Risk-Accp" name="Reason for Acceptance" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+        </dependencySet>
+		<!-- end SOXRisk -->
+		<!-- SOXIssue -->
+		<dependencySet objectType="SOXIssue">
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Investigation"/>
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                        <controllerValue name="Other"/>
+                        <controllerValue name="Regulatory"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Priority" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Resolution Status" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Root Cause Description" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Investigation"/>
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                        <controllerValue name="Other"/>
+                        <controllerValue name="Regulatory"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Assignee" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Identified By Individual" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Investigation"/>
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Conclusion" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Investigation"/>
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                        <controllerValue name="Other"/>
+                        <controllerValue name="Regulatory"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Additional Description" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Impact" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Identified By Group" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Root Cause Type" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                        <controllerValue name="Other"/>
+                        <controllerValue name="Regulatory"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Due Date" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Policy/Standard Violation"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Identified By Individual" type="EDITABLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Probability" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+            <dependency enabled="true" suppliedByVendor="false">
+                <controllers operator="and">
+                    <controller fieldGroup="OPSS-Iss" name="Issue Type">
+                        <controllerValue name="Investigation"/>
+                        <controllerValue name="Control Activity Missing"/>
+                        <controllerValue name="Operating Effectiveness"/>
+                        <controllerValue name="Design Effectiveness"/>
+                        <controllerValue name="Scoping"/>
+                    </controller>
+                </controllers>
+                <dependents>
+                    <dependent fieldGroup="OPSS-Iss" name="Domain" type="VISIBLE"/>
+                </dependents>
+            </dependency>
+        </dependencySet>
+		<!-- End SOXIssue -->
+	</dependencies>
+</openpagesConfiguration>

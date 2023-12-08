@@ -1,0 +1,44 @@
+{
+   "name":"Child Process Workflow",
+   "type":"standard",
+   "objectType":"SOXProcess",
+   "activities":[
+      {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"Review"
+            }]
+   	  },
+      {
+         "name":"Review",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "self",
+                  "field" : "OPSS-Process:Process Owner"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Review Complete",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"End"
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

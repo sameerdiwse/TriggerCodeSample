@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<trigger-definitions>
+
+<!--  define GRC Trigger hooks -->
+
+
+<!-- Loss Event -->
+<grcTrigger name="Risk Assessment create trigger" event="create.object" position="PRE">
+	<rule class="com.ibm.openpages.api.trigger.ext.ContentTypeMatchRule" >
+		<attribute name="content.type" value="LossEvent"/>
+	</rule>
+	<eventHandler class="com.ibm.openpages.api.trigger.ext.DateValidationHandler">
+		<attribute name="start.date.field" value="OPSS-LossEv:Occurrence Date" />
+		<attribute name="end.date.field" value="OPSS-LossEv:Occurrence End Date" />
+	</eventHandler>
+	<eventHandler class="com.ibm.openpages.api.trigger.ext.SetCurrentDateHandler">
+		<attribute name="current.date.field" value="OPSS-LossEv:Recognition Date" />
+	</eventHandler>
+</grcTrigger>
+
+<grcTrigger name="Risk Assessment update trigger" event="update.object" position="PRE">
+	<rule class="com.ibm.openpages.api.trigger.ext.ContentTypeMatchRule" >
+		<attribute name="content.type" value="LossEvent"/>
+	</rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.DateValidationHandler">
+        <attribute name="start.date.field" value="OPSS-LossEv:Occurrence Date" />
+        <attribute name="end.date.field" value="OPSS-LossEv:Occurrence End Date" />
+    </eventHandler>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetCurrentDateHandler">
+        <attribute name="current.date.field" value="OPSS-LossEv:Recognition Date" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="FolderMatch trigger" event="create.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.FolderMatchRule" >
+        <attribute name="folder.path" value="/_op_sox/Project/Default/ICDocumentation/Loss Events"/>
+        <attribute name="scope" value="recursive"/>
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-Shared-Basel:Risk Category" />
+        <attribute name="set.value" value="External Fraud" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="FolderMatch trigger" event="update.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.FolderMatchRule" >
+        <attribute name="folder.path" value="/_op_sox/Project/Default/ICDocumentation/Loss Events"/>
+        <attribute name="scope" value="recursive"/>
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-Shared-Basel:Risk Category" />
+        <attribute name="set.value" value="External Fraud" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="FieldsMatch trigger" event="create.object" position="PRE">
+	<rule class="com.ibm.openpages.api.trigger.ext.FieldsMatchRule" >		
+		<attribute name="content.type" value="LossEvent"/>
+		<attribute name="folder.path" value="/_op_sox/Project/Default/ICDocumentation/Loss Events"/>
+        <attribute name="scope" value="recursive"/>	
+		<!-- ENUM_TYPE -->
+		<attribute name="rule.field.1" value="OPSS-LossEv:Business Line"/>
+		<attribute name="rule.field.value.1" value="Commercial Banking"/>
+		<attribute name="rule.operator.1" value="="/>
+		<!-- STRING_TYPE -->
+		<attribute name="rule.field.2" value="OPSS-LossEv:Approver" />
+		<attribute name="rule.field.value.2" value=""/>
+		<attribute name="rule.operator.2" value="!="/>
+		<!-- DATE_TYPE -->
+		<attribute name="rule.field.3" value="OPSS-LossEv:Discovery Date" />
+		<attribute name="rule.field.value.3" value="today"/>
+		<attribute name="rule.operator.3" value="="/>
+	</rule>
+   <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-LossEv:Status" />
+        <attribute name="set.value" value="Approved" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="FieldsMatch trigger" event="update.object" position="PRE">
+	<rule class="com.ibm.openpages.api.trigger.ext.FieldsMatchRule" >		
+		<attribute name="content.type" value="LossEvent"/>
+		<attribute name="folder.path" value="/_op_sox/Project/Default/ICDocumentation/Loss Events"/>
+        <attribute name="scope" value="recursive"/>	
+		<!-- ENUM_TYPE -->
+		<attribute name="rule.field.1" value="OPSS-LossEv:Business Line"/>
+		<attribute name="rule.field.value.1" value="Commercial Banking"/>
+		<attribute name="rule.operator.1" value="="/>
+		<!-- STRING_TYPE -->
+		<attribute name="rule.field.2" value="OPSS-LossEv:Approver" />
+		<attribute name="rule.field.value.2" value=""/>
+		<attribute name="rule.operator.2" value="!="/>
+		<!-- DATE_TYPE -->
+		<attribute name="rule.field.3" value="OPSS-LossEv:Discovery Date" />
+		<attribute name="rule.field.value.3" value="today"/>
+		<attribute name="rule.operator.3" value="="/>
+	</rule>
+   <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-LossEv:Status" />
+        <attribute name="set.value" value="Approved" />
+    </eventHandler>
+</grcTrigger>
+
+<!-- SOXBusEntity -->
+<grcTrigger name="Entity create trigger" event="create.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.ContentTypeMatchRule" >
+        <attribute name="content.type" value="SOXBusEntity"/>
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-BusEnt:Entity Type" />
+        <attribute name="set.value" value="Business" />
+    </eventHandler>
+</grcTrigger>
+
+<!-- SOXIssue -->
+<grcTrigger name="ContentTypeMatch trigger" event="create.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.ContentTypeMatchRule" >                                             
+        <attribute name="content.type" value="SOXIssue" />
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-Issue:Status" />
+        <attribute name="set.value" value="New" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="ContentTypeMatch trigger" event="update.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.ContentTypeMatchRule" >
+        <attribute name="content.type" value="SOXIssue" />
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetEnumFieldHandler" >
+        <attribute name="enum.field" value="OPSS-Issue:Status" />
+        <attribute name="set.value" value="Closed" />
+    </eventHandler>
+</grcTrigger>
+
+<grcTrigger name="DetectPropertyChange trigger" event="update.object" position="PRE">
+    <rule class="com.ibm.openpages.api.trigger.ext.DetectPropertyChangeRule" >
+        <attribute name="content.type" value="SOXIssue" />
+        <attribute name="fields" value="OPSS-Issue:Additional Description"/>
+        <attribute name="check.for" value="any"/>
+    </rule>
+    <eventHandler class="com.ibm.openpages.api.trigger.ext.SetCurrentDateHandler" >
+        <attribute name="current.date.field" value="OPSS-Issue:Due Date" />
+    </eventHandler>
+</grcTrigger>
+
+</trigger-definitions>

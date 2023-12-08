@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<project default="-all" name="Build openpages-ext.jar">
+
+    <property file="build.env" />
+
+    <property name="CJA_SRC_DIR" value="cja/src" />
+    <property name="TRG_SRC_DIR" value="triggers/src" />
+    <property name="COMMON_SRC_DIR" value="common/src" />
+    <property name="BUILD_DIR" value="bin" />
+    <property name="CJA_BUILD_DIR" value="bin" />
+    <property name="TRG_BUILD_DIR" value="bin" />
+    <property name="COMMON_BUILD_DIR" value="bin" />
+    <property name="DIST_DIR" value="dist" />
+    <property name="LIB_DIR" value="lib" />
+
+    <target name="-all" depends="archive-openpages-ext" />
+	
+    <path id="compile.class.path">
+        <fileset dir="${LIB_DIR}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+
+    <target name="-clean">
+        <echo message="Deleting old class files and jar archives... " />
+        <delete dir="bin" />
+        <delete dir="${DIST_DIR}" />
+        <mkdir dir="${BUILD_DIR}" />
+        <mkdir dir="${CJA_BUILD_DIR}" />
+        <mkdir dir="${TRG_BUILD_DIR}" />
+        <mkdir dir="${COMMON_BUILD_DIR}" />
+        <mkdir dir="${DIST_DIR}" />
+    </target>
+
+    <target name="-compile" depends="-clean">
+		<echo message="Compiling Common classes..." />
+        <javac srcdir="${COMMON_SRC_DIR}" destdir="${COMMON_BUILD_DIR}" debug="on" optimize="off" fork="yes">
+            <classpath refid="compile.class.path"/>
+        </javac>
+		<echo message="Compiling Custom Triggers classes..." />
+        <javac srcdir="${TRG_SRC_DIR}" destdir="${TRG_BUILD_DIR}" debug="on"  optimize="off" fork="yes">
+            <classpath refid="compile.class.path"/>
+        </javac>
+        <echo message="Compiling Java Actions classes..." />
+        <javac srcdir="${CJA_SRC_DIR}" destdir="${CJA_BUILD_DIR}" debug="on" optimize="off" fork="yes">
+            <classpath refid="compile.class.path"/>
+        </javac>       
+    </target>
+
+    <target name="-add-class-path" description="Check for all required properites to send email">
+        <condition property="is.ClasspathSet">
+            <not>
+                <equals arg1="" arg2="${classpath}" casesensitive="false" trim="true" />
+            </not>
+        </condition>
+    </target>
+
+    <target name="-jar-classpath" depends="-compile,-add-class-path" if="${is.ClasspathSet}">
+        <echo message="Creating openpages-ext.jar archive..." />
+        <jar destfile="${DIST_DIR}/openpages-ext.jar">
+            <!--
+            basedir="${BUILD_DIR}"
+            includes="${CJA_BUILD_DIR}/**,${TRG_BUILD_DIR}/**">
+            -->
+            <fileset dir="${BUILD_DIR}">
+                <include name="**" />
+            </fileset>
+            <manifest>
+                <attribute name="Extension-Name" value="openpages-ext" />
+                <attribute name="Implementation-Title" value="OpenPages Application" />
+                <attribute name="Implementation-Vendor" value="IBM Corporation" />
+                <attribute name="Class-Path" value="${classpath}" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="-jar-no-classpath" depends="-compile,-add-class-path" unless="${is.ClasspathSet}">
+        <echo message="Creating openpages-ext.jar archive..." />
+        <jar destfile="${DIST_DIR}/openpages-ext.jar">
+            <!--
+            basedir="${BUILD_DIR}"
+            includes="${CJA_BUILD_DIR}/**,${TRG_BUILD_DIR}/**">
+            -->
+            <fileset dir="${BUILD_DIR}">
+                <include name="**" />
+            </fileset>            
+            <manifest>
+                <attribute name="Extension-Name" value="openpages-ext" />
+                <attribute name="Implementation-Title" value="OpenPages Application" />
+                <attribute name="Implementation-Vendor" value="IBM Corporation" />
+                <attribute name="Class-Path" value="api.jar" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="archive-openpages-ext" depends="-jar-no-classpath,-jar-classpath">
+        <echo message="openpages-ext.jar archive created successfully!!!" />
+        <zip destfile="${DIST_DIR}/openpages-ext.zip">
+            <fileset dir="${DIST_DIR}" includes="openpages-ext.jar" />
+            <fileset dir="${LIB_DIR}" includes="**.jar" excludes="aurora.jar,commons-logging-1.2.jar,iFlow.jar,op-integration.jar" />
+            <fileset dir="${BUILD_DIR}" />
+        </zip>
+    </target>
+    
+    <target name="copy-jar">
+        <copy todir="c:/opinstall/OpenPages/aurora/lib" flatten="true">
+            <fileset dir="dist" includes="openpages-ext.jar"/>
+         </copy>
+    </target>
+</project>
+
+

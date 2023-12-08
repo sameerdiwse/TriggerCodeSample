@@ -1,0 +1,78 @@
+{
+   "name":"Task Focused UI Integration Workflow",
+   "type":"standard",
+   "objectType":"SOXBusEntity",
+   "activities":[
+      {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"Review"
+            }]
+   	  },
+      {
+         "name":"Review",
+         "type":"node",
+         "viewName":"MyEntityView",
+         "guidanceOverride": {
+            "helpTopic":"Workflow Guidance Topic",
+            "helpText":"Workflow Guidance Text, Workflow Guidance Text, Workflow Guidance Text, Workflow Guidance Text, Workflow Guidance Text, "
+         },
+         "objectFieldOverrides" : [
+            {
+              "name": "OPSS-BusEnt:Entity Type",
+              "readonly": true
+            },
+            {
+              "name": "OPSS-BusEnt:In Scope",
+              "important": true
+            },
+            {
+              "name": "OPSS-BusEnt:Executive Owner",
+              "hidden": true
+            },
+            {
+              "name": "OPSS-BusEnt:Compliance Owner",
+              "hidden": true
+            },
+            {
+              "name": "OPSS-BusEnt:Logo URL",
+              "hidden": true
+            },
+            {
+              "name": "OPSS-Mand:Jurisdiction",
+              "hidden": true
+            }
+         
+         ],
+         "transitions":[
+            {
+               "name":"Submit for Approval",
+               "target":"End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Submitted for Approval"
+                  }
+               ]
+            }, 
+            {
+               "name" : "Cancel",
+               "target":"End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Workflow Canceled"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<openpagesConfiguration xmlFormatVersion="1.31">
+	<systemAdminMode enabled="false"/>
+	<roleTemplates explicitListing="false">
+
+		<roleTemplate name="API Samples - All Permissions" description="Full R/W/D/A access to all default API Sample objects.  Full admin rights." isEnabled="true" roleType="SOXBusEntity" explicitListing="false">
+			<roleAcl objectTypeName="KeyRiskIndicator" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="KeyRiskIndicatorValue" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="LossEvent" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="LossImpact" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXBusEntity" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXDocument,SOXExternalDocument" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXIssue" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXProcess" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXRisk" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXSignature" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXTask" canRead="Granted" canWrite="Granted" canDelete="Granted" canAssociate="Granted"/>
+
+
+			<!-- Grant most Admin application permissions -->
+			<roleApplicationPermission name="All/Administration"/>
+			<roleApplicationPermission name="All/Administration/System Administration Mode"/>
+			<roleApplicationPermission name="All/Files"/>
+			<roleApplicationPermission name="All/Files/Folders"/>
+			<roleApplicationPermission name="All/Collaboration"/>
+			<roleApplicationPermission name="All/Collaboration/JobTypes"/>
+			<roleApplicationPermission name="All/Collaboration/JobsAll"/>
+			<roleApplicationPermission name="All/Collaboration/StartJobs"/>
+			<roleApplicationPermission name="All/Publishing"/>
+			<roleApplicationPermission name="All/Publishing/Browse"/>
+			<roleApplicationPermission name="All/Publishing/Channels"/>
+			<roleApplicationPermission name="All/Publishing/Folders"/>
+			<roleApplicationPermission name="All/Publishing/Rules"/>
+			<roleApplicationPermission name="All/Publishing/Pages"/>
+			<roleApplicationPermission name="All/Publishing/Templates"/>
+			<roleApplicationPermission name="All/Publishing/AutoAssign"/>
+			<roleApplicationPermission name="All/Publishing/FileAssign"/>
+			<roleApplicationPermission name="All/Files/Lock"/>
+			<roleApplicationPermission name="All/Files/Unlock"/>
+			<roleApplicationPermission name="All/Files/Remove All Tree Locks"/>
+			<roleApplicationPermission name="All/Files/Cancel Checkout"/>
+			<roleApplicationPermission name="All/Files/Reassign Primary Association"/>
+			<roleApplicationPermission name="All/Administration/Archive Management"/>
+			<roleApplicationPermission name="All/SOX/Administration"/>
+			<roleApplicationPermission name="All/SOX/Administration/Role Templates"/>
+			<roleApplicationPermission name="All/SOX/Administration/Access Control Lists"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Periods"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Periods/Reapply"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Periods/Finalize"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Schema"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Framework"/>
+			<roleApplicationPermission name="All/SOX/Folders"/>
+			<roleApplicationPermission name="All/SOX/Audit Trail"/>
+			<roleApplicationPermission name="All/SOX/Issues"/>
+			<roleApplicationPermission name="All/SOX/Project Management"/>
+			<roleApplicationPermission name="All/SOX/Browse Files"/>
+			<roleApplicationPermission name="All/SOX/Administration/Object Reset"/>
+			<roleApplicationPermission name="All/SOX/View Locks"/>
+			<roleApplicationPermission name="All/SOX/Administration/Field Groups"/>
+			<roleApplicationPermission name="All/SOX/Administration/Object Types"/>
+			<roleApplicationPermission name="All/SOX/Administration/Object Text"/>
+			<roleApplicationPermission name="All/SOX/Administration/Object Profiles"/>
+			<roleApplicationPermission name="All/SOX/Administration/Application Text"/>
+			<roleApplicationPermission name="All/SOX/Administration/Settings"/>
+			<roleApplicationPermission name="All/SOX/Administration/Currencies"/>
+			<roleApplicationPermission name="All/SOX/Administration/Reporting Framework Configuration"/>
+			<roleApplicationPermission name="All/SOX/Administration/ImportConfiguration"/>
+			<roleApplicationPermission name="All/SOX/Administration/ExportConfiguration"/>
+		</roleTemplate>
+
+
+		<roleTemplate name="API Samples - End User" description="Limited Data rights and Application Permissions for API Samples" isEnabled="true" roleType="SOXBusEntity" explicitListing="false">
+			<roleAcl objectTypeName="KeyRiskIndicator" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="KeyRiskIndicatorValue" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="LossEvent" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="LossImpact" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXBusEntity" canRead="Granted" canWrite="Inherited" canDelete="Inherited" canAssociate="Inherited"/>
+			<roleAcl objectTypeName="SOXDocument,SOXExternalDocument" canRead="Granted" canWrite="Inherited" canDelete="Granted" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXIssue" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXProcess" canRead="Granted" canWrite="Inherited" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXRisk" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXSignature" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+			<roleAcl objectTypeName="SOXTask" canRead="Granted" canWrite="Granted" canDelete="Inherited" canAssociate="Granted"/>
+
+			<roleApplicationPermission name="All/Files"/>
+			<roleApplicationPermission name="All/Files/Folders"/>
+			<roleApplicationPermission name="All/Collaboration"/>
+			<roleApplicationPermission name="All/Collaboration/StartJobs"/>
+			<roleApplicationPermission name="All/Publishing"/>
+			<roleApplicationPermission name="All/Publishing/Browse"/>
+			<roleApplicationPermission name="All/Publishing/Channels"/>
+			<roleApplicationPermission name="All/Publishing/Folders"/>
+			<roleApplicationPermission name="All/Files/Lock"/>
+			<roleApplicationPermission name="All/Files/Unlock"/>
+			<roleApplicationPermission name="All/Files/Cancel Checkout"/>
+			<roleApplicationPermission name="All/Files/Reassign Primary Association"/>
+			<roleApplicationPermission name="All/SOX/Folders"/>
+			<roleApplicationPermission name="All/SOX/Audit Trail"/>
+			<roleApplicationPermission name="All/SOX/Issues"/>
+			<roleApplicationPermission name="All/SOX/Project Management"/>
+			<roleApplicationPermission name="All/SOX/Browse Files"/>
+		</roleTemplate>
+	</roleTemplates>
+
+	<roleAssignments>
+
+		<roleAssignment type="SOXBusEntity" status="assign">
+			<businessUnits>
+				<businessUnit name="/_op_sox/Project/Default/BusinessEntity"/>
+			</businessUnits>
+			<roleActors>
+				<roleActor name="AnonLossEntryForm"/>
+			</roleActors>
+			<roles>
+				<role name="API Samples - All Permissions"/>
+			</roles>
+		</roleAssignment>
+
+		<roleAssignment type="SOXBusEntity" status="assign">
+			<businessUnits>
+				<businessUnit name="/_op_sox/Project/Default/BusinessEntity"/>
+			</businessUnits>
+			<roleActors>
+				<roleActor name="bill"/>
+			</roleActors>
+			<roles>
+				<role name="API Samples - End User"/>
+			</roles>
+		</roleAssignment>
+	</roleAssignments>
+</openpagesConfiguration>

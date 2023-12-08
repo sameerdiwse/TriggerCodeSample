@@ -1,0 +1,15 @@
+{
+"name":"classifier-parent-controls",
+"description":"Test classifier with CSV-style training data values",
+"link":"http://www.bluemix.net",
+"urlForRequest":"https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/",
+"apiKey":"",
+"id":"830f99x515-nlc-1294",
+"confidenceThreshold":"1",
+"classifierType":"Association",
+"objectType":"SOXControl",
+"associationType":"Parent",
+"objectPath":"/Library",
+"nameField":"System Fields.Name",
+"descriptionField":"System Fields.Description"
+}

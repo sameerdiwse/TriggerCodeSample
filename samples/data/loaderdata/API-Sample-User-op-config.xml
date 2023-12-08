@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+
+<openpagesConfiguration xmlFormatVersion="1.27">
+    <actors>
+        <actor name="API Sample Users"
+               type="Group"
+               description="All API Sample Users"
+               emailAddress=""
+	       		locale=""
+               adminLevel="Default"
+               enabled="true"
+               hidden="false"
+               editable="true">
+        </actor>
+
+        <actor name="bill"
+        	type="User"
+                firstName="Bill"
+                middleName=""
+                lastName="User"
+                canChangePassword="true"
+                isTemporaryPassword="false"
+                passwordExpiresInDays="0"
+                description="sample user"
+                emailAddress="bill.user@localhost.com"
+                locale="U.S. English"
+                adminLevel="Default"
+                enabled="true"
+                hidden="false"
+                editable="true" />
+			
+		<!-- this is a special account for using a remote
+			Loss Event entry form anonymously -->
+		  <actor name="AnonLossEntryForm"
+        		type="User"
+                firstName="Anonymous"
+                middleName=""
+                lastName="Loss Entry Form"
+                canChangePassword="true"
+                isTemporaryPassword="false"
+                passwordExpiresInDays="0"
+                description="sample user"
+                emailAddress="anonle@ibm.com"
+                locale="U.S. English"
+                adminLevel="Default"
+                enabled="true"
+                hidden="false"
+                editable="true" />
+
+
+    </actors>
+
+    <actorGroupMemberships>
+        <actorGroupMembership name="API Sample Users" isEntityGroup="false">
+            <group name="Workflow, Reporting and Others" isEntityGroup="false"/>
+        </actorGroupMembership>
+
+        <actorGroupMembership name="bill" isEntityGroup="false">
+            <group name="API Sample Users" isEntityGroup="false"/>
+        </actorGroupMembership>
+
+		<actorGroupMembership name="AnonLossEntryForm" isEntityGroup="false">
+            <group name="API Sample Users" isEntityGroup="false"/>
+        </actorGroupMembership>
+    </actorGroupMemberships>
+
+    <actorObjectProfileAssociationSets>
+        <actorObjectProfileAssociationSet name="bill">
+            <actorObjectProfileAssociation name="Default" />
+        </actorObjectProfileAssociationSet>
+
+		<actorObjectProfileAssociationSet name="AnonLossEntryForm">
+            <actorObjectProfileAssociation name="Default" />
+        </actorObjectProfileAssociationSet>
+    </actorObjectProfileAssociationSets>
+
+</openpagesConfiguration>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed Materials - Property of IBM 5725-D51, 5725-D52, 5725-D53, 5725-D54 
+	© Copyright IBM Corporation 2019. All Rights Reserved. US Government Users 
+	Restricted Rights- Use, duplication or disclosure restricted by GSA ADP Schedule 
+	Contract with IBM Corp. */ /* { "$schema":{"$ref":"TS_Taxonomy_vMay132009"}, 
+	"author":"Abhishek Myana", "customer":"BD", "date":"02/09/2020", "summary":"Prevent 
+	Orphan Object Trigger Config", "technology":"xml", "feature":"Trigger Configuration", 
+	"rt_num":"" } -->
+<trigger-definitions>
+	<grcTrigger
+		name="Calculate Breaches Probability - Vendor Create"
+		event="create.object" position="POST">
+		<rule
+			class="com.ibm.openpages.api.trigger.oob.ContentTypeMatchRule">
+			<attribute name="content.type" value="Vendor" />
+		</rule>
+		<eventHandler
+			class="com.ibm.openpages.ext.custom.trigger.handler.VendorBreachesProbabilityHandler">
+			<attribute name="trigger.settingsPath"
+				value="/OpenPages/Solutions/Custom/Vendor-Breach Probability Trigger" />
+		</eventHandler>
+	</grcTrigger>
+
+	<grcTrigger
+		name="Calculate Breaches Probability - Vendor Update"
+		event="update.object" position="PRE">
+		<rule
+			class="com.ibm.openpages.api.trigger.oob.DetectPropertyChangeRule">
+			<attribute name="content.type" value="Vendor" />
+			<attribute name="fields"
+				value="POS-VRM-Shared:Country,POS-VRM-Shared:Industry" />
+			<attribute name="check.for" value="any" />
+		</rule>
+		<eventHandler
+			class="com.ibm.openpages.ext.custom.trigger.handler.VendorBreachesProbabilityHandler">
+			<attribute name="trigger.settingsPath"
+				value="/OpenPages/Solutions/Custom/Vendor-Breach Probability Trigger" />
+		</eventHandler>
+	</grcTrigger>
+	
+	<!--  Sumit - New triggers for BE secondary association -->
+	<grcTrigger
+		name="Update Parent association - Vendor Create"
+		event="create.object" position="POST">
+		<rule
+			class="com.ibm.openpages.api.trigger.oob.ContentTypeMatchRule">
+			<attribute name="content.type" value="Vendor" />
+		</rule>
+		<eventHandler
+			class="com.ibm.openpages.ext.custom.trigger.handler.AssociateSecondaryParentToVendorHandler">
+			<attribute name="trigger.settingsPath"
+				value="/OpenPages/Solutions/Custom/Vendor-Breach Probability Trigger" />
+		</eventHandler>
+	</grcTrigger>
+
+	<grcTrigger
+		name="Update Parent association - Vendor Update"
+		event="update.object" position="PRE">
+		<rule
+			class="com.ibm.openpages.api.trigger.oob.DetectPropertyChangeRule">
+			<attribute name="content.type" value="Vendor" />
+			<attribute name="fields"
+				value="POS-VRM-Vendor:Business unit 1" />
+			<attribute name="check.for" value="any" />
+		</rule>
+		<eventHandler
+			class="com.ibm.openpages.ext.custom.trigger.handler.AssociateSecondaryParentToVendorHandler">
+			<attribute name="trigger.settingsPath"
+				value="/OpenPages/Solutions/Custom/Vendor-Breach Probability Trigger" />
+		</eventHandler>
+	</grcTrigger>
+</trigger-definitions>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openpagesConfiguration xmlFormatVersion="1.31">
+    <systemInformation name="opapp"
+                       retrievalDate="Thu Apr 01 08:23:08 EDT 2021"
+                       openpages="10.2.0.0 (Build: 8.2.0.0-205 2020/06/02 19:54:15)"
+                       operatingSystem="Linux 3.10.0-1160.21.1.el7.x86_64"
+                       javaRuntimeEnvironment="8.0.6.5 - pxa6480sr6fp5-20200111_02(SR6 FP5)"
+                       database="SQL110500"
+                       databaseDriver="IBM Data Server Driver for JDBC and SQLJ 4.26.14"
+                       systemAdminMode="false"/>
+    <systemAdminMode enabled="false"/>
+    <applicationStringKeyCategories>
+        <applicationStringKeyCategory name="Custom"
+                                      description="Custom"/>
+    </applicationStringKeyCategories>
+    <applicationStringKeys>
+        <applicationStringKey name="com.posten.wf.custom.create.issue.action.generic.error.message"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="Error occurredwhile executing Create Issue Action on the Questionnaire Assessment workflow.&#10;Please contact the system administrator."
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.issue.action.no.kri.found.error.message"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="No KRI with KRI ID {0} was found for this Vendor."
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.kri.action.email.body.kri.not.found.in.library"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="&lt;p&gt;&#10;Hi{0},&lt;br&gt;&#10;There is an issue on the KRI Library: the KRI having KRI ID {1} was not found.&lt;br&gt;&#10;This was detected by the Workflow Custom Action CA-02-KRI which was trying to create a KRI for Question Template Titled {2}, unde Questionnaire Template titled {3}. &lt;br&gt;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Please let the system administrator know about this missing KRI.&#10;&lt;/p&gt;"
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.kri.action.email.body.missing.kri.id.on.question.template"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="&lt;p&gt;&#10;   Hi,&lt;br&gt;&#10;   The KRI ID is not set on a Question Template and because of that the Workflow Custom Action CA-02-KRI cannot create a KRI.&#10;   Please ensure to set a KRI ID on the respective Question template.&lt;br&gt;&#10;   You can find details below about Question Template and its parent Questionnaire Template:&#10;   &lt;b&gt;&#10;   {0}&#10;   &lt;/b&gt;&#10;  &lt;p&gt;"
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.kri.action.email.subject.kri.not.found.in.library"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="KRI not found in KRI Library"
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.kri.action.email.subject.missing.kri.id.on.question.template"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="Missing KRI Id on Question Template"
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+        <applicationStringKey name="com.posten.wf.custom.create.kri.action.generic.error.message"
+                              description=""
+                              enabled="true"
+                              category="Custom"
+                              value="Create KRI Action on the Questionnaire Assessment workflow: please contact the system administrator about this error."
+                              suppliedByVendor="false"
+                              overriddenByUser="true"/>
+    </applicationStringKeys>
+    <applicationStrings>
+        <localeStrings name="U.K. English">
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.body.kri.not.found.in.library"
+                               category="Custom"
+                               value="&lt;!DOCTYPE HTML&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;/head&gt;&#10;&lt;body style=&quot;font-family: ibm-plex-sans,HelveticaNeue,Helvetica,Arial,sans-serif; font-size: 14px;&quot;&gt;&#10;&lt;h1 style=&quot;font-size: 20px; font-weight: 300; padding: 22px 24px;&quot;&gt;&#10;IBM &lt;span style=&quot;font-weight: 600&quot;&gt;&#10;OpenPages with Watson&lt;/span&gt;&#10;&lt;/h1&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 2px solid #0f62fe&quot;/&gt;&#10;&lt;p&gt;&#10;Hi{0},&lt;br&gt;&#10;The KRI Library doesn&apos;t contain any KRI having KRI ID {1}. Because of this the KRI Create / Update workflow custom action cannot execute.&lt;br&gt;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Please ask the system administrator to fix this: &#10;&lt;ul&gt;&#10;&lt;li&gt;&#10;either correct the KRI ID on the Question Template(so that it matches the KRI ID of a KRI in the KRI Library)&#10;&lt;/li&gt;&#10;&lt;li&gt;&#10;or add a new KRI in the KRI library, which has the KRI ID specified on the Question Template&#10;&lt;/li&gt;&#10;&lt;/ul&gt;&#10;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Details are available below.&#10;&lt;/p&gt;&#10;&lt;div style=&quot;padding: 8px 24px 32px; background-color: #f3f3f3;&quot;&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Question Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{1}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Questionnaire Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{2}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;KRI Library Path:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;/Library/KRI Library&#10;&lt;/p&gt;&#10;&lt;/div&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 1px solid #767676&quot;/&gt;&#10;&lt;div style=&quot;padding: 32px 24px;&quot;&gt;&#10;This email was automatically generated by OpenPages with Watson.&lt;/div&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.body.missing.kri.id.on.question.template"
+                               category="Custom"
+                               value="&lt;!DOCTYPE HTML&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;/head&gt;&#10;&lt;body style=&quot;font-family: ibm-plex-sans,HelveticaNeue,Helvetica,Arial,sans-serif; font-size: 14px;&quot;&gt;&#10;&lt;h1 style=&quot;font-size: 20px; font-weight: 300; padding: 22px 24px;&quot;&gt;&#10;IBM &lt;span style=&quot;font-weight: 600&quot;&gt;&#10;OpenPages with Watson&lt;/span&gt;&#10;&lt;/h1&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 2px solid #0f62fe&quot;/&gt;&#10;&lt;p&gt;&#10;Hi {0},&lt;br&gt;&#10;There is no KRI ID set on a Question template and because of this the KRI Create / Update workflow custom action cannot execute.&lt;br&gt;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Please ask the system administrator to set a KRI ID on the respective Question Template.&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Details are available below.&#10;&lt;/p&gt;&#10;&lt;div style=&quot;padding: 8px 24px 32px; background-color: #f3f3f3;&quot;&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Question Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{1}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Questionnaire Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{2}&#10;&lt;/p&gt;&#10;&lt;/div&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 1px solid #767676&quot;/&gt;&#10;&lt;div style=&quot;padding: 32px 24px;&quot;&gt;&#10;This email was automatically generated by OpenPages with Watson.&lt;/div&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.issue.action.no.kri.found.error.message"
+                               category="Custom"
+                               value="No KRI with KRI ID {0} was found for this Vendor."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.subject.kri.not.found.in.library"
+                               category="Custom"
+                               value="KRI not found in KRI Library"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.issue.action.generic.error.message"
+                               category="Custom"
+                               value="Create Issue Action on the Questionnaire Assessment workflow: please contact the system administrator about this error."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.generic.error.message"
+                               category="Custom"
+                               value="Create KRI Action on the Questionnaire Assessment workflow: please contact the system administrator about this error."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.subject.missing.kri.id.on.question.template"
+                               category="Custom"
+                               value="Missing KRI Id on Question Template"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+        </localeStrings>
+        <localeStrings name="U.S. English">
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.body.kri.not.found.in.library"
+                               category="Custom"
+                               value="&lt;!DOCTYPE HTML&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;/head&gt;&#10;&lt;body style=&quot;font-family: ibm-plex-sans,HelveticaNeue,Helvetica,Arial,sans-serif; font-size: 14px;&quot;&gt;&#10;&lt;h1 style=&quot;font-size: 20px; font-weight: 300; padding: 22px 24px;&quot;&gt;&#10;IBM &lt;span style=&quot;font-weight: 600&quot;&gt;&#10;OpenPages with Watson&lt;/span&gt;&#10;&lt;/h1&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 2px solid #0f62fe&quot;/&gt;&#10;&lt;p&gt;&#10;Hi{0},&lt;br&gt;&#10;The KRI Library doesn&apos;t contain any KRI having KRI ID {1}. Because of this the KRI Create / Update workflow custom action cannot execute.&lt;br&gt;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Please ask the system administrator to fix this: &#10;&lt;ul&gt;&#10;&lt;li&gt;&#10;either correct the KRI ID on the Question Template(so that it matches the KRI ID of a KRI in the KRI Library)&#10;&lt;/li&gt;&#10;&lt;li&gt;&#10;or add a new KRI in the KRI library, which has the KRI ID specified on the Question Template&#10;&lt;/li&gt;&#10;&lt;/ul&gt;&#10;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Details are available below.&#10;&lt;/p&gt;&#10;&lt;div style=&quot;padding: 8px 24px 32px; background-color: #f3f3f3;&quot;&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Question Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{1}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Questionnaire Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{2}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;KRI Library Path:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;/Library/KRI Library&#10;&lt;/p&gt;&#10;&lt;/div&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 1px solid #767676&quot;/&gt;&#10;&lt;div style=&quot;padding: 32px 24px;&quot;&gt;&#10;This email was automatically generated by OpenPages with Watson.&lt;/div&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.body.missing.kri.id.on.question.template"
+                               category="Custom"
+                               value="&lt;!DOCTYPE HTML&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;&lt;/head&gt;&#10;&lt;body style=&quot;font-family: ibm-plex-sans,HelveticaNeue,Helvetica,Arial,sans-serif; font-size: 14px;&quot;&gt;&#10;&lt;h1 style=&quot;font-size: 20px; font-weight: 300; padding: 22px 24px;&quot;&gt;&#10;IBM &lt;span style=&quot;font-weight: 600&quot;&gt;&#10;OpenPages with Watson&lt;/span&gt;&#10;&lt;/h1&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 2px solid #0f62fe&quot;/&gt;&#10;&lt;p&gt;&#10;Hi {0},&lt;br&gt;&#10;There is no KRI ID set on a Question template and because of this the KRI Create / Update workflow custom action cannot execute.&lt;br&gt;&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Please ask the system administrator to set a KRI ID on the respective Question Template.&#10;&lt;/p&gt;&#10;&lt;p&gt;&#10;Details are available below.&#10;&lt;/p&gt;&#10;&lt;div style=&quot;padding: 8px 24px 32px; background-color: #f3f3f3;&quot;&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Question Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{1}&#10;&lt;/p&gt;&#10;&lt;h2 style=&quot;font-size: 14px; font-weight: 600; margin: 24px 0 8px;&quot;&gt;&#10;Questionnaire Template:&lt;/h2&gt;&#10;&lt;p style=&quot;margin: 0&quot;&gt;&#10;{2}&#10;&lt;/p&gt;&#10;&lt;/div&gt;&#10;&lt;hr style=&quot;margin: 0; border-bottom: 1px solid #767676&quot;/&gt;&#10;&lt;div style=&quot;padding: 32px 24px;&quot;&gt;&#10;This email was automatically generated by OpenPages with Watson.&lt;/div&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.issue.action.no.kri.found.error.message"
+                               category="Custom"
+                               value="No KRI with KRI ID {0} was found for this Vendor."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.subject.kri.not.found.in.library"
+                               category="Custom"
+                               value="KRI not found in KRI Library"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.issue.action.generic.error.message"
+                               category="Custom"
+                               value="Create Issue Action on the Questionnaire Assessment workflow: please contact the system administrator about this error."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.generic.error.message"
+                               category="Custom"
+                               value="Create KRI Action on the Questionnaire Assessment workflow: please contact the system administrator about this error."
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+            <applicationString name="com.posten.wf.custom.create.kri.action.email.subject.missing.kri.id.on.question.template"
+                               category="Custom"
+                               value="Missing KRI Id on Question Template"
+                               suppliedByVendor="false"
+                               overriddenByUser="true"/>
+        </localeStrings>
+    </applicationStrings>
+</openpagesConfiguration>

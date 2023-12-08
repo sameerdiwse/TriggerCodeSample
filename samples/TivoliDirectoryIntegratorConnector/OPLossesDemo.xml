@@ -1,0 +1,1603 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig IDIversion="Created by TDI7.1.1.2 - 2012-10-15" created="Thu Oct 31 10:51:53 EDT 2013" createdBy="jiang.wenl" modified="Thu Oct 31 10:51:53 EDT 2013" modifiedBy="jiang.wenl" version="7.1.1">
+    <Folder name="AssemblyLines">
+        <AssemblyLine name="ExportLosses">
+            <ModTime>1383231039694</ModTime>
+            <Settings/>
+            <Hooks/>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <SimulationConfig>
+                <SimulationStates>
+                    <Component name="DumpWorkEntry" state="Enabled"/>
+                    <Component name="LossJDBCConnector" state="Simulated"/>
+                    <Component name="LossesOpenPages" state="Enabled"/>
+                </SimulationStates>
+                <ProxySettings/>
+            </SimulationConfig>
+            <LogConfig/>
+            <ContainerEF name="EntryFeedContainer">
+                <Connector name="LossesOpenPages">
+                    <InheritFrom>/Connectors/OpenPages</InheritFrom>
+                    <ModTime>1382455063645</ModTime>
+                    <ConnectorMode>Iterator</ConnectorMode>
+                    <ConnectorState>Enabled</ConnectorState>
+                    <Configuration>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <parameter name="query">select * from [LossEvent] where [LossEvent].[Creation Date] &gt;'2013-05-04'</parameter>
+                    </Configuration>
+                    <Parser>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                    </Parser>
+                    <AttributeMap name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <AttributeMapItem>
+                            <Name>Location</Name>
+                            <Type>simple</Type>
+                            <Simple>Location</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>Name</Name>
+                            <Type>simple</Type>
+                            <Simple>Name</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>OPSS-LossEv:Business Line</Name>
+                            <Type>simple</Type>
+                            <Simple>OPSS-LossEv:Business Line</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>OPSS-LossEv:Estimated Gross Loss</Name>
+                            <Type>simple</Type>
+                            <Simple>OPSS-LossEv:Estimated Gross Loss</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>OPSS-LossEv:Occurrence Date</Name>
+                            <Type>simple</Type>
+                            <Simple>OPSS-LossEv:Occurrence Date</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>OPSS-LossEv:Status</Name>
+                            <Type>simple</Type>
+                            <Simple>OPSS-LossEv:Status</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>OPSS-LossEv:What Happened</Name>
+                            <Type>simple</Type>
+                            <Simple>OPSS-LossEv:What Happened</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>Resource ID</Name>
+                            <Type>simple</Type>
+                            <Simple>Resource ID</Simple>
+                        </AttributeMapItem>
+                    </AttributeMap>
+                    <AttributeMap name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </AttributeMap>
+                    <DeltaSettings>
+                        <UniqueAttribute/>
+                        <WhenToCommit>After every database operation</WhenToCommit>
+                        <RowLocking>SERIALIZABLE</RowLocking>
+                        <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                    </DeltaSettings>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>Comment</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Created By</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Creation Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Description</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Last Modification Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Last Modified By</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Location</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Name</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Approver</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Business Line</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Causal Category</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Causal Subcategory</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Discovery Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Estimated Gross Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Gross Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Net Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Occurrence Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Occurrence End Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Outcome</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Owner</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Recognition Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Recovery Amount</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Status</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:What Happened</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared-Basel:Risk Category</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared-Basel:Risk Subcategory</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared:Add Desc</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Resource ID</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>counter</Name>
+                            <NativeSyntax>Number</NativeSyntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>field</Name>
+                        </SchemaItem>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>Comment</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Created By</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Creation Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Description</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Last Modification Date</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Last Modified By</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Location</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Name</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Approver</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Business Line</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Causal Category</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Causal Subcategory</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Discovery Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Estimated Gross Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Gross Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Net Loss</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Occurrence Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Occurrence End Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Outcome</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Owner</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Recognition Date</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Recovery Amount</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:Status</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-LossEv:What Happened</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared-Basel:Risk Category</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared-Basel:Risk Subcategory</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>OPSS-Shared:Add Desc</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>Resource ID</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>field</Name>
+                        </SchemaItem>
+                    </Schema>
+                    <LinkCriteria>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </LinkCriteria>
+                    <Hooks>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Hooks>
+                    <CheckpointConfig/>
+                    <SandboxConfig/>
+                    <Reconnect>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ReconnectRules/>
+                    </Reconnect>
+                    <Operations/>
+                    <PoolDefinition>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </PoolDefinition>
+                    <PoolInstance/>
+                </Connector>
+            </ContainerEF>
+            <ContainerDF name="DataFlowContainer">
+                <Script name="DumpWorkEntry">
+                    <ModTime>1369146541012</ModTime>
+                    <parameter name="enabled">true</parameter>
+                    <parameter name="script"><![CDATA[// Dump the work entry
+task.dumpEntry(work);
+]]></parameter>
+                </Script>
+                <Connector name="LossJDBCConnector">
+                    <InheritFrom>/Connectors/JDBCConnector</InheritFrom>
+                    <ModTime>1383231039694</ModTime>
+                    <ConnectorMode>Update</ConnectorMode>
+                    <ConnectorState>Enabled</ConnectorState>
+                    <Configuration>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Configuration>
+                    <Parser>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                    </Parser>
+                    <AttributeMap name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </AttributeMap>
+                    <AttributeMap name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <AttributeMapItem>
+                            <Name>HOWMUCH</Name>
+                            <Type>advanced</Type>
+                            <Script>work["OPSS-LossEv:Estimated Gross Loss"]</Script>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>INSERTED_ON</Name>
+                            <Modify>false</Modify>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>WHEN</Name>
+                            <Type>advanced</Type>
+                            <Script>system.parseDate(work["OPSS-LossEv:Occurrence Date"],"yyyy-MM-dd-HH:mm")</Script>
+                        </AttributeMapItem>
+                    </AttributeMap>
+                    <DeltaSettings/>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>HOWMUCH</Name>
+                            <Syntax>java.math.BigDecimal</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>INSERTED_ON</Name>
+                            <Syntax>java.sql.Timestamp</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>LOCATION_WHERE</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>LOSS_ID</Name>
+                            <Syntax>java.math.BigDecimal</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>NAME</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>WHAT</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>WHEN</Name>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>WHO</Name>
+                        </SchemaItem>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <SchemaItem>
+                            <Name>HOWMUCH</Name>
+                            <Syntax>java.math.BigDecimal</Syntax>
+                            <NativeSyntax>NUMBER</NativeSyntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>INSERTED_ON</Name>
+                            <Syntax>java.sql.Timestamp</Syntax>
+                            <NativeSyntax>DATE</NativeSyntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>LOCATION_WHERE</Name>
+                            <Syntax>java.lang.String</Syntax>
+                            <NativeSyntax>VARCHAR2</NativeSyntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>LOSS_ID</Name>
+                            <Syntax>java.math.BigDecimal</Syntax>
+                            <NativeSyntax>NUMBER</NativeSyntax>
+                            <Presence>Required</Presence>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>NAME</Name>
+                            <Syntax>java.lang.String</Syntax>
+                            <NativeSyntax>VARCHAR2</NativeSyntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>WHAT</Name>
+                            <NativeSyntax>VARCHAR2</NativeSyntax>
+                        </SchemaItem>
+                    </Schema>
+                    <LinkCriteria>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <LinkCriteriaItem>
+                            <Key>13e846602b5</Key>
+                            <Attribute>LOSS_ID</Attribute>
+                            <Value>$Resource ID</Value>
+                        </LinkCriteriaItem>
+                    </LinkCriteria>
+                    <Hooks>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Hooks>
+                    <CheckpointConfig/>
+                    <SandboxConfig/>
+                    <Reconnect>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ReconnectRules/>
+                    </Reconnect>
+                    <Operations/>
+                    <PoolDefinition>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </PoolDefinition>
+                    <PoolInstance/>
+                </Connector>
+            </ContainerDF>
+            <ThreadOptions/>
+            <Operations/>
+            <InitParams>
+                <Schema name="AssemblyLineInitParams"/>
+            </InitParams>
+        </AssemblyLine>
+    </Folder>
+    <Folder name="Connectors">
+        <Connector name="HTTPClientConnector">
+            <InheritFrom>system:/Connectors/ibmdi.HTTPClient</InheritFrom>
+            <ModTime>1383229784431</ModTime>
+            <ConnectorMode>Iterator</ConnectorMode>
+            <ConnectorState>Enabled</ConnectorState>
+            <Configuration>
+                <InheritFrom>[parent]</InheritFrom>
+                <parameter name="contentType"/>
+                <parameter name="debug">true</parameter>
+                <parameter name="password"/>
+                <parameter name="url">http://localhost</parameter>
+                <parameter name="username"/>
+            </Configuration>
+            <Parser>
+                <InheritFrom>system:/Parsers/ibmdi.JSONParser</InheritFrom>
+                <parameter name="debug">true</parameter>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+            </Parser>
+            <AttributeMap name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <AttributeMap name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+                <AttributeMapItem>
+                    <Name>*</Name>
+                    <Type>simple</Type>
+                    <Simple>*</Simple>
+                </AttributeMapItem>
+            </AttributeMap>
+            <DeltaSettings>
+                <WhenToCommit>After every database operation</WhenToCommit>
+                <RowLocking>SERIALIZABLE</RowLocking>
+                <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+            </DeltaSettings>
+            <Schema name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </Schema>
+            <Schema name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+            </Schema>
+            <LinkCriteria>
+                <InheritFrom>[parent]</InheritFrom>
+            </LinkCriteria>
+            <Hooks>
+                <InheritFrom>[parent]</InheritFrom>
+            </Hooks>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <Reconnect>
+                <InheritFrom>[parent]</InheritFrom>
+                <ReconnectRules/>
+            </Reconnect>
+            <Operations/>
+            <PoolDefinition>
+                <InheritFrom>[parent]</InheritFrom>
+                <Enabled>false</Enabled>
+                <MinPoolSize>0</MinPoolSize>
+                <MaxPoolSize>0</MaxPoolSize>
+                <PurgeInterval>0</PurgeInterval>
+                <InitializeAttempts>1</InitializeAttempts>
+                <InitializeSleepInterval>0</InitializeSleepInterval>
+            </PoolDefinition>
+            <PoolInstance/>
+        </Connector>
+        <Connector name="JDBCConnector">
+            <InheritFrom>system:/Connectors/ibmdi.JDBC</InheritFrom>
+            <ModTime>1383229784813</ModTime>
+            <ConnectorMode>AddOnly</ConnectorMode>
+            <ConnectorState>Enabled</ConnectorState>
+            <Configuration>
+                <UserComment><![CDATA[sun.jdbc.odbc.JdbcOdbcDriver
+
+{Microsoft Excel Driver (*.xls, *.xlsx, *.xlsm, *.xlsb)};
+
+jdbc:odbc:Driver={Microsoft Excel Driver (*.xls)};DBQ=C:\\Vision2013\\LossDemo.xls;readOnly=false]]></UserComment>
+                <InheritFrom>[parent]</InheritFrom>
+                <parameter name="debug">true</parameter>
+                <parameter name="jdbcCustomPreparedStatements">false</parameter>
+                <parameter name="jdbcDateFormat"/>
+                <parameter name="jdbcDriver">oracle.jdbc.driver.OracleDriver</parameter>
+                <parameter name="jdbcLogin">vision</parameter>
+                <parameter name="jdbcPassword">vision</parameter>
+                <parameter name="jdbcSchema">vision</parameter>
+                <parameter name="jdbcSource">jdbc:oracle:thin:@ADMINIB-P3BA6L6:1522/OP</parameter>
+                <parameter name="jdbcTable">Losses</parameter>
+            </Configuration>
+            <Parser>
+                <InheritFrom>[parent]</InheritFrom>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+            </Parser>
+            <AttributeMap name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <AttributeMap name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+                <AttributeMapItem>
+                    <Name>HOWMUCH</Name>
+                    <Type>advanced</Type>
+                    <Script><![CDATA[//split currency string into parts <ISO Code> 0.0
+var partsArray = work["OPSS-LossEv:Estimated Gross Loss"].getValue().split(" ");
+ret.value = partsArray[1];]]></Script>
+                    <Simple>HOWMUCH</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>INSERTED_ON</Name>
+                    <Type>advanced</Type>
+                    <Script>work.INSERTED_ON = new Date();</Script>
+                    <Simple>INSERTED_ON</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>LOCATION_WHERE</Name>
+                    <Type>advanced</Type>
+                    <Script>ret.value = work.Location;</Script>
+                    <Simple>Location</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>LOSS_ID</Name>
+                    <Type>advanced</Type>
+                    <Script>ret.value = work.getAttribute("Resource ID");</Script>
+                    <Simple>LOSS_ID</Simple>
+                    <NullBehavior>Default Behavior</NullBehavior>
+                    <NullDefinition>Default</NullDefinition>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>NAME</Name>
+                    <Type>advanced</Type>
+                    <Script>ret.value = work.Name;</Script>
+                    <Simple>Name</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>WHAT</Name>
+                    <Type>advanced</Type>
+                    <Script>work["OPSS-LossEv:What Happened"]</Script>
+                    <Simple>WHAT</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>WHEN</Name>
+                    <Type>advanced</Type>
+                    <Script>work["OPSS-LossEv:Discovery Date"];</Script>
+                    <Simple>WHEN</Simple>
+                </AttributeMapItem>
+                <AttributeMapItem>
+                    <Name>WHO</Name>
+                    <Type>advanced</Type>
+                    <Script>work["OPSS-LossEv:Business Line"];</Script>
+                    <Simple>WHO</Simple>
+                </AttributeMapItem>
+            </AttributeMap>
+            <DeltaSettings/>
+            <Schema name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </Schema>
+            <Schema name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+                <SchemaItem>
+                    <Name>HOWMUCH</Name>
+                    <NativeSyntax>NUMBER</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>INSERTED_ON</Name>
+                    <NativeSyntax>DATE</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>LOCATION_WHERE</Name>
+                    <NativeSyntax>VARCHAR2</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>LOSS_ID</Name>
+                    <NativeSyntax>NUMBER</NativeSyntax>
+                    <Presence>Required</Presence>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>NAME</Name>
+                    <NativeSyntax>VARCHAR2</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>WHAT</Name>
+                    <NativeSyntax>VARCHAR2</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>WHEN</Name>
+                    <NativeSyntax>DATE</NativeSyntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>WHO</Name>
+                    <NativeSyntax>VARCHAR2</NativeSyntax>
+                </SchemaItem>
+            </Schema>
+            <LinkCriteria>
+                <InheritFrom>[parent]</InheritFrom>
+                <MatchAny>true</MatchAny>
+                <LinkCriteriaItem>
+                    <Key>13e846602b5</Key>
+                    <Operator>equals</Operator>
+                </LinkCriteriaItem>
+            </LinkCriteria>
+            <Hooks>
+                <InheritFrom>[parent]</InheritFrom>
+            </Hooks>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <Reconnect>
+                <InheritFrom>[parent]</InheritFrom>
+                <ReconnectRules/>
+            </Reconnect>
+            <Operations/>
+            <PoolDefinition>
+                <InheritFrom>[parent]</InheritFrom>
+                <Enabled>false</Enabled>
+                <MinPoolSize>0</MinPoolSize>
+                <MaxPoolSize>0</MaxPoolSize>
+                <PurgeInterval>0</PurgeInterval>
+                <InitializeAttempts>1</InitializeAttempts>
+                <InitializeSleepInterval>0</InitializeSleepInterval>
+            </PoolDefinition>
+            <PoolInstance/>
+            <InitializeOption>0</InitializeOption>
+        </Connector>
+        <Connector name="OpenPages 20130515 1445">
+            <InheritFrom>system:/Connectors/ibmdi.ScriptConnector</InheritFrom>
+            <ModTime>1383229784823</ModTime>
+            <ConnectorMode>Iterator</ConnectorMode>
+            <ConnectorState>Enabled</ConnectorState>
+            <Configuration>
+                <InheritFrom>[parent]</InheritFrom>
+                <parameter name="$form$"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" created="Wed May 15 08:32:06 EDT 2013" createdBy="blaskey" main="Form" modified="Wed May 15 08:37:28 EDT 2013" modifiedBy="blaskey" version="7.1.1">
+    <Form name="Form">
+        <ModTime>1368621441622</ModTime>
+        <FormItemNames>
+            <ListItem>$GLOBAL.script</ListItem>
+            <ListItem>keepGlobalState</ListItem>
+            <ListItem>$GLOBAL.includeFiles</ListItem>
+            <ListItem>includePrologs</ListItem>
+            <ListItem>$GLOBAL.debug</ListItem>
+            <ListItem>$GLOBAL.help</ListItem>
+            <ListItem>port</ListItem>
+            <ListItem>host</ListItem>
+            <ListItem>user</ListItem>
+            <ListItem>password</ListItem>
+            <ListItem>type</ListItem>
+            <ListItem>query</ListItem>
+        </FormItemNames>
+        <FormSectionNames>
+            <ListItem>General</ListItem>
+            <ListItem>Advanced</ListItem>
+        </FormSectionNames>
+        <FormItem name="host">
+            <ModTime>1368621250086</ModTime>
+            <parameter name="label">Host</parameter>
+        </FormItem>
+        <FormItem name="includePrologs">
+            <parameter name="description">pro_desc</parameter>
+            <parameter name="label">pro_label</parameter>
+            <parameter name="script">selectGlobalProlog</parameter>
+            <parameter name="scriptLabel">pro_script_label</parameter>
+            <parameter name="scripthelp">pro_script_help</parameter>
+            <parameter name="syntax">textarea</parameter>
+        </FormItem>
+        <FormItem name="keepGlobalState">
+            <parameter name="description">SCRIPT_CONN_KEEP_GLOBAL_STATE_DESC</parameter>
+            <parameter name="label">SCRIPT_CONN_KEEP_GLOBAL_STATE_LABEL</parameter>
+            <parameter name="syntax">boolean</parameter>
+        </FormItem>
+        <FormItem name="password">
+            <ModTime>1368621273307</ModTime>
+            <parameter name="label">Password</parameter>
+            <parameter name="syntax">password</parameter>
+        </FormItem>
+        <FormItem name="port">
+            <ModTime>1368621210819</ModTime>
+            <parameter name="label">Port</parameter>
+            <parameter name="syntax">string</parameter>
+        </FormItem>
+        <FormItem name="query">
+            <ModTime>1368621324497</ModTime>
+            <parameter name="label">Query</parameter>
+            <parameter name="syntax">textarea</parameter>
+        </FormItem>
+        <FormItem name="type">
+            <ModTime>1368621399309</ModTime>
+            <parameter name="label">Type</parameter>
+            <parameter name="syntax">string</parameter>
+        </FormItem>
+        <FormItem name="user">
+            <ModTime>1368621259872</ModTime>
+            <parameter name="label">User</parameter>
+        </FormItem>
+        <FormSection name="Advanced">
+            <FormSectionNames>
+                <ListItem>keepGlobalState</ListItem>
+                <ListItem>$GLOBAL.includeFiles</ListItem>
+                <ListItem>includePrologs</ListItem>
+                <ListItem>$GLOBAL.debug</ListItem>
+                <ListItem>$GLOBAL.userComment</ListItem>
+            </FormSectionNames>
+            <parameter name="initiallyExpanded">false</parameter>
+            <parameter name="title">Advanced</parameter>
+        </FormSection>
+        <FormSection name="General">
+            <ModTime>1368621441622</ModTime>
+            <FormSectionNames>
+                <ListItem>host</ListItem>
+                <ListItem>port</ListItem>
+                <ListItem>user</ListItem>
+                <ListItem>password</ListItem>
+                <ListItem>type</ListItem>
+                <ListItem>query</ListItem>
+                <ListItem>$GLOBAL.script</ListItem>
+            </FormSectionNames>
+            <parameter name="title"/>
+        </FormSection>
+        <parameter name="title">OpenPages</parameter>
+        <TranslationFile>NLS/idi_conn_scriptconn</TranslationFile>
+    </Form>
+</MetamergeConfig>]]></parameter>
+                <parameter name="includeFiles"/>
+                <parameter name="script"><![CDATA[// Sample connector
+// Place initialization code before function declarations
+//
+var host
+var isDebug
+var port
+var user
+var password
+var type
+var query
+
+function logmsg(msg)
+{
+	java.lang.System.out.println(msg)
+}
+
+function initialize()
+{
+		host = connector.getParam("host");
+		if(host == null && isDebug) host = "localhost";
+		logmsg("Host: "+host);
+		
+		port = connector.getParam("port");
+		if(port == null && isDebug) port = "10108";
+		logmsg("Port: "+port);
+		
+		user = connector.getParam("user");
+		if(user == null && isDebug) user = "OpenPagesAdministrator";
+		logmsg("User: "+user);
+		
+		password = connector.getParam("password");
+		if(password == null && isDebug) password = "OpenPagesAdministrator";
+		logmsg("Password: "+password);
+		
+		type = connector.getParam("type");
+		if(type == null && isDebug) type = "LossEvent";
+		logmsg("Object Type: "+type);
+		
+		query = connector.getParam("query");
+		if(query == null && isDebug) query = "SELECT * FROM [LossEvent]";
+		logmsg("Query String: "+query);
+}
+
+function selectEntries()
+{
+	counter = 0;
+}
+
+function getNextEntry ()
+{
+	if (counter > 100) {
+		result.setStatus (0);
+		result.setMessage ("End of input");
+		return;
+	}
+
+	entry.setAttribute ("counter", counter);
+	counter++;
+}
+
+function putEntry ()
+{
+}
+
+function modEntry ()
+{
+}
+
+function deleteEntry ()
+{
+}
+
+function findEntry ()
+{
+}
+
+function querySchema ()
+{
+	var e = new com.ibm.di.entry.Entry();
+	e.addAttributeValue("name","counter");
+	e.addAttributeValue("syntax","Number");
+	list.add(e);
+	result.setStatus (1);
+}
+]]></parameter>
+            </Configuration>
+            <Parser>
+                <InheritFrom>[parent]</InheritFrom>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+            </Parser>
+            <AttributeMap name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <AttributeMap name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <DeltaSettings>
+                <WhenToCommit>After every database operation</WhenToCommit>
+                <RowLocking>SERIALIZABLE</RowLocking>
+                <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+            </DeltaSettings>
+            <Schema name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </Schema>
+            <Schema name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+            </Schema>
+            <LinkCriteria>
+                <InheritFrom>[parent]</InheritFrom>
+            </LinkCriteria>
+            <Hooks>
+                <InheritFrom>[parent]</InheritFrom>
+            </Hooks>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <Reconnect>
+                <InheritFrom>[parent]</InheritFrom>
+                <ReconnectRules/>
+            </Reconnect>
+            <Operations/>
+            <PoolDefinition>
+                <InheritFrom>[parent]</InheritFrom>
+                <Enabled>false</Enabled>
+                <MinPoolSize>0</MinPoolSize>
+                <MaxPoolSize>0</MaxPoolSize>
+                <PurgeInterval>0</PurgeInterval>
+                <InitializeAttempts>1</InitializeAttempts>
+                <InitializeSleepInterval>0</InitializeSleepInterval>
+            </PoolDefinition>
+            <PoolInstance/>
+        </Connector>
+        <Connector name="OpenPages">
+            <InheritFrom>system:/Connectors/ibmdi.ScriptConnector</InheritFrom>
+            <ModTime>1383231058378</ModTime>
+            <ConnectorMode>Delta</ConnectorMode>
+            <ConnectorState>Enabled</ConnectorState>
+            <Configuration>
+                <InheritFrom>[parent]</InheritFrom>
+                <parameter name="$form$"><![CDATA[<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" created="Wed May 15 08:32:06 EDT 2013" createdBy="blaskey" main="Form" modified="Wed May 15 08:37:28 EDT 2013" modifiedBy="blaskey" version="7.1.1">
+    <Form name="Form">
+        <ModTime>1368621441622</ModTime>
+        <FormItemNames>
+            <ListItem>$GLOBAL.script</ListItem>
+            <ListItem>keepGlobalState</ListItem>
+            <ListItem>$GLOBAL.includeFiles</ListItem>
+            <ListItem>includePrologs</ListItem>
+            <ListItem>$GLOBAL.debug</ListItem>
+            <ListItem>$GLOBAL.help</ListItem>
+            <ListItem>port</ListItem>
+            <ListItem>host</ListItem>
+            <ListItem>user</ListItem>
+            <ListItem>password</ListItem>
+            <ListItem>type</ListItem>
+            <ListItem>query</ListItem>
+        </FormItemNames>
+        <FormSectionNames>
+            <ListItem>General</ListItem>
+            <ListItem>Advanced</ListItem>
+        </FormSectionNames>
+        <FormItem name="host">
+            <ModTime>1368621250086</ModTime>
+            <parameter name="label">Host</parameter>
+        </FormItem>
+        <FormItem name="includePrologs">
+            <parameter name="description">pro_desc</parameter>
+            <parameter name="label">pro_label</parameter>
+            <parameter name="script">selectGlobalProlog</parameter>
+            <parameter name="scriptLabel">pro_script_label</parameter>
+            <parameter name="scripthelp">pro_script_help</parameter>
+            <parameter name="syntax">textarea</parameter>
+        </FormItem>
+        <FormItem name="keepGlobalState">
+            <parameter name="description">SCRIPT_CONN_KEEP_GLOBAL_STATE_DESC</parameter>
+            <parameter name="label">SCRIPT_CONN_KEEP_GLOBAL_STATE_LABEL</parameter>
+            <parameter name="syntax">boolean</parameter>
+        </FormItem>
+        <FormItem name="password">
+            <ModTime>1368621273307</ModTime>
+            <parameter name="label">Password</parameter>
+            <parameter name="syntax">password</parameter>
+        </FormItem>
+        <FormItem name="port">
+            <ModTime>1368621210819</ModTime>
+            <parameter name="label">Port</parameter>
+            <parameter name="syntax">string</parameter>
+        </FormItem>
+        <FormItem name="query">
+            <ModTime>1368621324497</ModTime>
+            <parameter name="label">Query</parameter>
+            <parameter name="syntax">textarea</parameter>
+        </FormItem>
+        <FormItem name="type">
+            <ModTime>1368621399309</ModTime>
+            <parameter name="label">Type</parameter>
+            <parameter name="syntax">string</parameter>
+        </FormItem>
+        <FormItem name="user">
+            <ModTime>1368621259872</ModTime>
+            <parameter name="label">User</parameter>
+        </FormItem>
+        <FormSection name="Advanced">
+            <FormSectionNames>
+                <ListItem>keepGlobalState</ListItem>
+                <ListItem>$GLOBAL.includeFiles</ListItem>
+                <ListItem>includePrologs</ListItem>
+                <ListItem>$GLOBAL.debug</ListItem>
+                <ListItem>$GLOBAL.userComment</ListItem>
+            </FormSectionNames>
+            <parameter name="initiallyExpanded">false</parameter>
+            <parameter name="title">Advanced</parameter>
+        </FormSection>
+        <FormSection name="General">
+            <ModTime>1368621441622</ModTime>
+            <FormSectionNames>
+                <ListItem>host</ListItem>
+                <ListItem>port</ListItem>
+                <ListItem>user</ListItem>
+                <ListItem>password</ListItem>
+                <ListItem>type</ListItem>
+                <ListItem>query</ListItem>
+                <ListItem>$GLOBAL.script</ListItem>
+            </FormSectionNames>
+            <parameter name="title"/>
+        </FormSection>
+        <parameter name="title">OpenPages</parameter>
+        <TranslationFile>NLS/idi_conn_scriptconn</TranslationFile>
+    </Form>
+</MetamergeConfig>]]></parameter>
+                <parameter name="debug">true</parameter>
+                <parameter name="host">localhost</parameter>
+                <parameter name="includeFiles"/>
+                <parameter name="password">test</parameter>
+                <parameter name="port">10108</parameter>
+                <parameter name="query">SELECT * FROM [LossEvent]</parameter>
+                <parameter name="script"><![CDATA[// Sample connector
+// Place initialization code before function declarations
+//
+var host
+var isDebug
+var port
+var user
+var password
+var type
+var query
+//user functions
+var http = system.getConnector("ibmdi.HTTPClient")
+var rows
+var rowCount
+
+function logmsg(msg)
+{
+	java.lang.System.out.println(msg)
+}
+
+function initialize()
+{
+		host = connector.getParam("host");
+		if(host == null && isDebug) host = "ADMINIB-P3BA6L6";
+		logmsg("Host: "+host);
+		
+		port = connector.getParam("port");
+		if(port == null && isDebug) port = "10108";
+		logmsg("Port: "+port);
+		
+		user = connector.getParam("user");
+		if(user == null && isDebug) user = "test";
+		logmsg("User: "+user);
+		
+		password = connector.getParam("password");
+		if(password == null && isDebug) password = "test";
+		logmsg("Password: "+password);
+		
+		type = connector.getParam("type");
+		if(type == null && isDebug) type = "LossEvent";
+		logmsg("Object Type: "+type);
+		
+		query = connector.getParam("query");
+		if(query == null && isDebug) query = "SELECT * FROM [LossEvent]";
+		logmsg("Query String: "+query);
+}
+
+function selectEntries()
+{
+	var baseUrl = "http://"+host+":"+port
+	
+	var queryBase = "/grc/api/query?q="
+	
+	var url = baseUrl + queryBase + query
+	
+	http.setParam("username",user)
+	http.setParam("password",password)
+	
+	http.setParam("url",url)
+	//get method by default
+	http.initialize(null)
+	
+	var retEntry = http.queryReply(null)
+	var body = retEntry.getString("http.bodyAsString") 
+	
+	//result is JSON entries
+    var atom = retEntry.fromJSON(body)
+
+	rows = atom.rows.rows
+	rowCount = 0;
+	
+}
+
+function getNextEntry ()
+{
+	
+	if (rowCount >= rows.getLength()){
+	
+		result.setStatus (0);
+		return;
+	}
+	
+	var row = rows[rowCount]
+	var fields = row.fields.field.field
+	for( att in fields){
+		var fieldName = att.getElementsByTagName("name")[0]
+		var dataType = att.getElementsByTagName("dataType")[0]
+		logmsg("Field: "+fieldName+" "+dataType);
+		var attValue = null
+		var valueNode = att.getElementsByTagName("value")
+		if(valueNode.getLength()>0){
+			attValue = valueNode[0]
+		}else if(dataType == "CURRENCY_TYPE"){
+			attValue = att.getElementsByTagName("baseAmount")[0]
+		}
+		else if(dataType == "ENUM_TYPE"){
+			enumNode = att.getElementsByTagName("enumValue")
+			if(enumNode.getLength()>0){
+				enumValueNameNode = enumNode[0].getElementsByTagName("name")
+				if(enumValueNameNode.getLength()>0){
+					attValue = enumValueNameNode[0]
+				}
+			}	
+		}
+		entry[fieldName] = attValue
+	}	
+	rowCount++
+}
+
+function putEntry ()
+{
+}
+
+function modEntry ()
+{
+}
+
+function deleteEntry ()
+{
+}
+
+function findEntry ()
+{
+}
+
+function querySchema ()
+{
+	var e = system.newEntry()
+	e.addAttributeValue("name","counter");
+	e.addAttributeValue("syntax","Number");
+	list.add(e);
+	result.setStatus (1);
+}
+]]></parameter>
+                <parameter name="type">LossEvent</parameter>
+                <parameter name="user">test</parameter>
+            </Configuration>
+            <Parser>
+                <InheritFrom>[parent]</InheritFrom>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                </Schema>
+            </Parser>
+            <AttributeMap name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <AttributeMap name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+            </AttributeMap>
+            <DeltaSettings>
+                <WhenToCommit>After every database operation</WhenToCommit>
+                <RowLocking>SERIALIZABLE</RowLocking>
+                <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+            </DeltaSettings>
+            <Schema name="Input">
+                <InheritFrom>[parent]</InheritFrom>
+                <SchemaItem>
+                    <Name>Comment</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Created By</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Creation Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Description</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Last Modification Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Last Modified By</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Location</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Name</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Approver</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Business Line</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Causal Category</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Causal Subcategory</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Discovery Date</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Estimated Gross Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Gross Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Net Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Occurrence Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Occurrence End Date</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Outcome</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Owner</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Recognition Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Recovery Amount</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Status</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:What Happened</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-Shared-Basel:Risk Category</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-Shared-Basel:Risk Subcategory</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Orphan</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Resource ID</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>counter</Name>
+                    <NativeSyntax>Number</NativeSyntax>
+                    <Presence>Optional</Presence>
+                </SchemaItem>
+            </Schema>
+            <Schema name="Output">
+                <InheritFrom>[parent]</InheritFrom>
+                <SchemaItem>
+                    <Name>Comment</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Created By</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Creation Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Description</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Last Modification Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Last Modified By</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Location</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Name</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Approver</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Business Line</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Causal Category</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Causal Subcategory</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Discovery Date</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Estimated Gross Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Gross Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Net Loss</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Occurrence Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Occurrence End Date</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Outcome</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Owner</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Recognition Date</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Recovery Amount</Name>
+                    <Syntax>java.lang.Double</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:Status</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-LossEv:What Happened</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-Shared-Basel:Risk Category</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>OPSS-Shared-Basel:Risk Subcategory</Name>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Orphan</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>Resource ID</Name>
+                    <Syntax>java.lang.String</Syntax>
+                </SchemaItem>
+                <SchemaItem>
+                    <Name>counter</Name>
+                    <NativeSyntax>Number</NativeSyntax>
+                </SchemaItem>
+            </Schema>
+            <LinkCriteria>
+                <InheritFrom>[parent]</InheritFrom>
+            </LinkCriteria>
+            <Hooks>
+                <InheritFrom>[parent]</InheritFrom>
+            </Hooks>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <Reconnect>
+                <InheritFrom>[parent]</InheritFrom>
+                <ReconnectRules/>
+            </Reconnect>
+            <Operations/>
+            <PoolDefinition>
+                <InheritFrom>[parent]</InheritFrom>
+                <Enabled>false</Enabled>
+                <MinPoolSize>0</MinPoolSize>
+                <MaxPoolSize>0</MaxPoolSize>
+                <PurgeInterval>0</PurgeInterval>
+                <InitializeAttempts>1</InitializeAttempts>
+                <InitializeSleepInterval>0</InitializeSleepInterval>
+            </PoolDefinition>
+            <PoolInstance/>
+        </Connector>
+    </Folder>
+    <Folder name="Parsers"/>
+    <Folder name="Scripts"/>
+    <JavaLibraries/>
+    <JavaProperties/>
+    <Folder name="Includes"/>
+    <Folder name="Config">
+        <LogConfig name="Logging"/>
+        <InstanceProperties name="AutoStart">
+            <AutoStart/>
+        </InstanceProperties>
+        <TombstonesConfig name="Tombstones"/>
+        <SolutionInterface name="SolutionInterface">
+            <PollInterval>-1</PollInterval>
+            <InstanceID>OPLosses</InstanceID>
+            <enabled>true</enabled>
+        </SolutionInterface>
+    </Folder>
+    <Folder name="Functions"/>
+    <Folder name="AttributeMaps"/>
+    <Properties name="Properties">
+        <Stores>
+            <PropertyStore name="Solution-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">Solution-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="Global-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">Global-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="System-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collectionType">System-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="OpenPages">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/OpenPages.properties</parameter>
+                    <parameter name="collectionType">OpenPages</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="Java-Properties">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/OpenPages.properties</parameter>
+                    <parameter name="collectionType">Java-Properties</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="OPLossesDemo">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/OPLossesDemo.properties</parameter>
+                    <parameter name="collectionType">OPLossesDemo</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="OpenPagesSample">
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/OpenPagesSample.properties</parameter>
+                    <parameter name="collectionType">OpenPagesSample</parameter>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+            <PropertyStore name="OPLosses">
+                <ModTime>1382042608053</ModTime>
+                <Parser>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <RawConnector>
+                    <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                    <parameter name="collection">@SUBSTITUTE{config.$directory}/OPLosses.properties</parameter>
+                    <parameter name="collectionType">OPLosses</parameter>
+                    <parameter name="keyAlias"/>
+                </RawConnector>
+                <Key>key</Key>
+                <Value>value</Value>
+                <ReadOnly>false</ReadOnly>
+                <InitialLoad>true</InitialLoad>
+                <CacheTimeout>0</CacheTimeout>
+            </PropertyStore>
+        </Stores>
+    </Properties>
+    <Folder name="Schedules"/>
+    <Folder name="Sequences"/>
+</MetamergeConfig>

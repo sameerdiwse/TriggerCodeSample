@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<openpagesConfiguration xmlFormatVersion="1.27">
+    <systemAdminMode enabled="false" />
+	<!-- Create folders -->
+    <nonFormBasedResources>
+	    <resource name="/_op_sox/Project/Default/ICDocumentation/KRI's"
+                               shortName = "KRI's"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:14"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:14"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+        <resource name="/_op_sox/Project/Default/ICDocumentation/KRI Values"
+                               shortName = "KRI Values"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:14"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:14"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+        <resource name="/_op_sox/Project/Default/ICDocumentation/Loss Events"
+                               shortName = "Loss Events"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:14"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:14"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+	    <resource name="/_op_sox/Project/Default/ICDocumentation/Loss Impacts"
+                               shortName = "Loss Impacts"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:14"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:14"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+		<resource name="/_op_sox/Project/Default/ICDocumentation/Processes"
+                               shortName = "Processes"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:15"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:15"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+		<resource name="/_op_sox/Project/Default/ICDocumentation/Risks"
+                               shortName = "Risks"
+                               parentFolder = "/_op_sox/Project/Default/ICDocumentation"
+                               description = "Application Folder"
+                               resourceType = "Folder"
+                               subResourceType = "Normal"
+                               storageServer = "default-lfs"
+                               contentLength = ""
+                               multiVersionable = "false"
+                               contentLanguage = ""
+                               fileType = ""
+                               contentType = ""
+                               sourceResource = ""
+                               creator = "OpenPagesAdministrator"
+                               creationDate = "2012-12-06 13:47:15"
+                               checkedOut = "false"
+                               checkedOutBy = ""
+                               checkedOutDate = ""
+                               modifiedBy = "OpenPagesAdministrator"
+                               modificationDate = "2012-12-06 13:47:15"
+                               visibilityType = "Normal"
+                               inheritAcls="true" />
+	</nonFormBasedResources>
+    <systemAdminMode enabled="true" />
+	<!-- Load ContentTypes -->
+    <jspBasedContentTypes>
+	    <contentType name="KeyRiskIndicator"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/KRI's"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+        <contentType name="KeyRiskIndicatorValue"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/KRI Values"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+		<contentType name="LossEvent"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/Loss Events"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+        <contentType name="LossImpact"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/Loss Impacts"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+		<contentType name="SOXProcess"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/Processes"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+		<contentType name="SOXRisk"
+                               description = "Unified Object Type"
+                               rootFolder = "/_op_sox/Project/Default/ICDocumentation/Risks"
+                               category = "Compliance"
+                               multiVersionable = "true"
+                               jspPath = "/propertyForm/renderProperties.jsp"
+                               suppliedByVendor="true" searchEnabled="true">
+            <fileTypeAssignment name="txt (text/plain)" />
+        </contentType>
+	</jspBasedContentTypes>
+    <systemAdminMode enabled="false" />
+
+</openpagesConfiguration>

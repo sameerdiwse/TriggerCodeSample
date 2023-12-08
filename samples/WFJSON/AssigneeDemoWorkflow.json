@@ -1,0 +1,214 @@
+{
+   "name":"Assignee Demo Workflow",
+   "type":"standard",
+   "objectType":"SOXBusEntity",
+   "activities":[
+      {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"InReview"
+            }]
+   	  },
+      {
+         "name":"InReview",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "string",
+                  "value" : "OpenPagesAdministrator"
+               }
+            },
+            {
+               "type":"setProcessOwner",
+               "processOwner": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "directParent",
+                  "honorPrimary" : true,
+                  "objectType" : "SOXBusEntity",
+                  "field" : "OPSS-BusEnt:Executive Owner"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Submit for Approval for a user",
+               "target":"InApproveByUser"
+            },
+            {
+               "name":"Submit for Approval for a group",
+               "target":"InApproveByGroup"
+            },
+            {
+               "name":"Submit for Approval for an object field",
+               "target":"InApproveByObjectField"
+            },
+            {
+               "name":"Submit for Approval for a parent field",
+               "target":"InApproveByParentField"
+            },
+            {
+               "name":"Submit for Approval for a child field",
+               "target":"InApproveByChildField"
+            },
+            {
+               "name":"Submit for Approval for a preference field",
+               "target":"InApproveByPreferenceField"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByUser",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "string",
+                  "value" : "orm"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByGroup",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "string",
+                  "value" : "OPAdministrators"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByObjectField",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "self",
+                  "field" : "OPSS-BusEnt:Compliance Owner"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByParentField",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "directParent",
+                  "honorPrimary" : true,
+                  "objectType" : "SOXBusEntity",
+                  "field" : "OPSS-BusEnt:Executive Owner"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByChildField",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "directChild",
+                  "objectType" : "SOXIssue",
+                  "field" : "OPSS-Iss:Issue Approver"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+         "name":"InApproveByPreferenceField",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "objectField",
+                  "referenceType" : "preference",
+                  "field" : "OPSS-Pref:Preference Owner"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"End"
+            }, 
+            {
+               "name" : "Reject",
+               "target":"InReview"
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

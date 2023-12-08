@@ -1,0 +1,82 @@
+{
+   "name":"Simple Workflow",
+   "type":"standard",
+   "objectType":"SOXBusEntity",
+   "activities":[
+      {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"Review"
+            }]
+   	  },
+      {
+         "name":"Review",
+         "type":"node",
+         "transitions":[
+            {
+               "name":"Submit for Approval",
+               "target":"Approve",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Submitted for Approval"
+                  }
+               ]
+            }, 
+            {
+               "name" : "Cancel",
+               "target" : "End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Workflow Canceled"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Approve",
+         "type":"node",
+         "transitions":[
+            {
+               "name":"Approve",
+               "target" : "End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Approved!"
+                  }
+               ]
+            }, 
+            {
+               "name" : "Reject",
+               "target":"Review",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Rejected"
+                  }
+               ]
+            }, 
+            {
+               "name" : "Cancel",
+               "target" : "End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Workflow Canceled"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

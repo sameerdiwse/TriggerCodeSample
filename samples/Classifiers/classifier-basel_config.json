@@ -1,0 +1,16 @@
+{
+"name":"classifier-basel",
+"description":"Test classifier using new Watson authentication method",
+"link":"http://www.bluemix.net",
+"urlForRequest":"https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/",
+"apiKey":"",
+"id":"6367d0x551-nlc-2056",
+"confidenceThreshold":"1",
+"classifierType":"Enumeration",
+"fields":[
+    {"value":"OPSS-Shared-Basel.Risk Category"},
+    {"value":"OPSS-Shared-Basel.Risk Subcategory"},
+    {"value":"OPSS-Shared-Basel.Risk Example"}
+]	
+}
+

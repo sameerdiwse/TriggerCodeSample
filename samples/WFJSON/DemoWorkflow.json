@@ -1,0 +1,205 @@
+{
+   "name":"Demo Workflow",
+   "type":"standard",
+   "objectType":"SOXBusEntity",
+   "attributes":{  
+      "owner":"orm",
+      "reviewer":"fcm"
+   },
+   "activities":[
+   	  {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"Review"
+            }]
+   	  },
+      {
+         "name":"Review",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setProcessStatus",
+               "processStatus":"Review Started"
+            },
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "string",
+                  "value" : "[$reviewer$]"
+               }
+            },
+            {
+               "type":"setFields",
+               "fieldSetters":[
+                  {
+                     "field":{ 
+                        "evalType" : "objectField",
+                        "referenceType" : "self",
+                        "field" : "MRG-BusEnt:Additional Description"
+                     },
+                     "value":{ 
+                        "evalType" : "string",
+                        "value" : "Entity Submitted for Approval Process."
+                     },
+                     "append":false
+                  }
+               ]
+            }
+         ],
+         "transitions":[
+            {
+               "name":"Submit for Approval",
+               "target":"Approve",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Submitted for Approval"
+                  },
+                  {
+                     "type":"setAssignees",
+                     "assignees": { 
+                        "evalType" : "string",
+                        "value" : "orm"
+                     }
+                  },
+                  {
+                     "type":"setFields",
+                     "fieldSetters":[
+                        {
+                           "field":{ 
+                              "evalType" : "objectField",
+                              "referenceType" : "self",
+                              "field" : "MRG-BusEnt:Additional Description"
+                           },
+                           "value":{ 
+                              "evalType" : "string",
+                              "value" : "Edited by submit for approval action."
+                           },
+                           "append":false
+                        }
+                     ]
+                  }
+               ],
+               "condition":{
+                  "evalType":"relationalCondition",
+                  "relationalOperator":"equals",
+                  "invertMatch":true,
+                  "leftValue":{
+                     "evalType" : "string",
+                     "value" : "Legal"
+                  },
+                  "rightValue":{
+                     "evalType" : "objectField",
+                     "referenceType" : "self",
+                     "field" : "OPSS-BusEnt:Entity Type"
+                  }
+               }
+            },
+            {
+               "name":"Submit for Legal Approval",
+               "target":"Approve",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Submitted for Legal Approval"
+                  },
+                  {
+                     "type":"setAssignees",
+                     "assignees": { 
+                        "evalType" : "string",
+                        "value" : "legalCounsel"
+                     }
+                  },
+                  {
+                     "type":"validate",
+                     "validator":{
+                        "evalType":"relationalCondition",
+                        "relationalOperator":"equals",
+                        "invertMatch":true,
+                        "leftValue":{
+                           "evalType" : "string",
+                           "value" : "Compliance"
+                        },
+                        "rightValue":{
+                           "evalType" : "objectField",
+                           "referenceType" : "self",
+                           "field" : "OPSS-BusEnt:In Scope"
+                        }
+                     }
+                  }
+               ],
+               "condition":{
+                  "evalType":"relationalCondition",
+                  "relationalOperator":"equals",
+                  "leftValue":{
+                     "evalType" : "string",
+                     "value" : "Legal"
+                  },
+                  "rightValue":{
+                     "evalType" : "objectField",
+                     "referenceType" : "self",
+                     "field" : "OPSS-BusEnt:Entity Type"
+                  }
+               }
+            },
+            {
+               "name":"Cancel",
+               "target":"End",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Workflow Canceled"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Approve",
+         "type":"node",
+         "transitions":[
+            {
+               "name":"Approve",
+               "target":"Attest"
+            },
+            {
+               "name":"Reject",
+               "target":"Review",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Rejected"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Attest",
+         "type":"node",
+         "transitions":[
+            {
+               "name":"Attest",
+               "target":"End"
+            },
+            {
+               "name":"Reject",
+               "target":"Review",
+               "actions":[
+                  {
+                     "type":"setProcessStatus",
+                     "processStatus":"Rejected"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

@@ -1,0 +1,235 @@
+{
+   "name":"Transition Condition and Validation Workflow",
+   "type":"standard",
+   "objectType":"SOXBusEntity",
+   "activities":[
+      {
+   	  	 "name":"Start",
+   	  	 "type":"start",
+   	  	 "transitions":[
+            {
+               "name":"Begin Workflow",
+               "target":"Review"
+            }]
+   	  },
+      {
+         "name":"Review",
+         "type":"node",
+         "preActions":[
+            {
+               "type":"setAssignees",
+               "assignees": { 
+                  "evalType" : "string",
+                  "value" : "OpenPagesAdministrator"
+               }
+            }
+         ],
+         "transitions":[
+            {
+               "name":"1 - Condition for object text field",
+               "target":"End",
+               "condition": {
+                  "evalType" : "conditionGroup",
+                  "logicalOperator" : "AND",
+                  "conditions" : [ {
+                    "evalType" : "relationalCondition",
+                    "relationalOperator" : "equals",
+                    "leftValue" : {
+                      "evalType" : "objectField",
+                      "referenceType" : "self",
+                      "field" : "System Fields:Description"
+                    },
+                    "rightValue" : {
+                      "evalType" : "string",
+                      "value" : "test12345"
+                    }
+                  } ]
+               }
+            }, {
+               "name":"2 - Condition for assignee",
+               "target":"End",
+               "condition": {
+                  "evalType" : "conditionGroup",
+                  "logicalOperator" : "AND",
+                  "conditions" : [ {
+                    "evalType" : "relationalCondition",
+                    "relationalOperator" : "in",
+                    "leftValue" : {
+                      "evalType" : "objectField",
+                      "referenceType" : "self",
+                      "field" : "System Workflow Fields:Assignees"
+                    },
+                    "rightValue" : {
+                      "evalType" : "list",
+                      "evals" : [ {
+                        "evalType" : "string",
+                        "value" : "orm"
+                      }, {
+                        "evalType" : "string",
+                        "value" : "itg"
+                      }, {
+                        "evalType" : "objectField",
+                        "referenceType" : "self",
+                        "field" : "OPSS-BusEnt:Compliance Owner"
+                      } ]
+                    }
+                  } ]
+               }
+            }, {
+               "name":"3 - Condition for primary parent currency field",
+               "target":"End",
+               "condition" : {
+                 "evalType" : "conditionGroup",
+                 "logicalOperator" : "AND",
+                 "conditions" : [ {
+                   "evalType" : "relationalCondition",
+                   "relationalOperator" : "greaterThan",
+                   "leftValue" : {
+                     "evalType" : "objectField",
+                     "objectType" : "SOXBusEntity",
+                     "referenceType" : "directParent",
+                     "honorPrimary" : true,
+                     "field" : "OPSS-BusEnt:Risk Appetite"
+                   },
+                   "rightValue" : {
+                     "evalType" : "string",
+                     "value" : "10000.0"
+                   }
+                 } ]
+               }
+            }, {
+               "name":"4 - Condition for child count with enum filter",
+               "target":"End",
+               "condition" : {
+                 "evalType" : "conditionGroup",
+                 "logicalOperator" : "AND",
+                 "conditions" : [ {
+                   "evalType" : "relationalCondition",
+                   "relationalOperator" : "equals",
+                   "leftValue" : {
+                     "evalType" : "objectCount",
+                     "objectType" : "SOXIssue",
+                     "referenceType" : "directChild",
+                     "condition" : {
+                       "evalType" : "relationalCondition",
+                       "relationalOperator" : "in",
+                       "leftValue" : {
+                         "evalType" : "string",
+                         "value" : "OPSS-Iss:Status"
+                       },
+                       "rightValue" : {
+                         "evalType" : "string",
+                         "value" : "Open"
+                       }
+                     }
+                   },
+                   "rightValue" : {
+                     "evalType" : "string",
+                     "value" : "0"
+                   }
+                 } ]
+               }
+            }, {
+               "name":"5 - Condition for preference object field with enum filter",
+               "target":"End",
+               "condition" : {
+                 "evalType" : "conditionGroup",
+                 "logicalOperator" : "AND",
+                 "conditions" : [ {
+                   "evalType" : "relationalCondition",
+                   "relationalOperator" : "equals",
+                   "leftValue" : {
+                     "evalType" : "objectCount",
+                     "referenceType" : "preference",
+                     "condition" : {
+                       "evalType" : "relationalCondition",
+                       "relationalOperator" : "in",
+                       "leftValue" : {
+                         "evalType" : "string",
+                         "value" : "OPSS-Pref:Preference Type"
+                       },
+                       "rightValue" : {
+                         "evalType" : "list",
+                         "evals" : [ {
+                           "evalType" : "string",
+                           "value" : "ORM"
+                         }, {
+                           "evalType" : "string",
+                           "value" : "Audit Risk Rating"
+                         } ]
+                       }
+                     }
+                   },
+                   "rightValue" : {
+                     "evalType" : "string",
+                     "value" : "1"
+                   }
+                 } ]
+               }
+            }, {
+               "name":"6 - Validation for object date field",
+               "target":"End",
+               "actions":[ {
+                 "type" : "validate",
+                 "validator" : {
+                   "evalType" : "conditionGroup",
+                   "logicalOperator" : "AND",
+                   "conditions" : [ {
+                     "evalType" : "relationalCondition",
+                     "relationalOperator" : "lessThan",
+                     "leftValue" : {
+                       "evalType" : "objectField",
+                       "referenceType" : "self",
+                       "field" : "OPSS-Mand:Release Date"
+                     },
+                     "rightValue" : {
+                       "evalType" : "string",
+                       "value" : "2018-12-31"
+                     }
+                   } ]
+                 }
+               } ]
+            }, {
+               "name":"7 - Validation for child count",
+               "target":"End",
+               "actions":[ {
+                 "type" : "validate",
+                 "validator" : {
+                   "evalType" : "conditionGroup",
+                   "logicalOperator" : "AND",
+                   "conditions" : [ {
+                     "evalType" : "relationalCondition",
+                     "relationalOperator" : "greaterThan",
+                     "leftValue" : {
+                       "evalType" : "objectCount",
+                       "objectType" : "SOXRisk",
+                       "referenceType" : "directChild",
+                       "condition" : {
+                         "evalType" : "relationalCondition",
+                         "relationalOperator" : "in",
+                         "leftValue" : {
+                           "evalType" : "string",
+                           "value" : "OPSS-Rsk:Domain"
+                         },
+                         "rightValue" : {
+                           "evalType" : "string",
+                           "value" : "Compliance"
+                         }
+                       }
+                     },
+                     "rightValue" : {
+                       "evalType" : "string",
+                       "value" : "0"
+                     }
+                   } ]
+                 }
+               } ]
+            }
+         ]
+      },
+      {
+   	  	 "name":"End",
+   	  	 "type":"end"
+   	  }
+   ]
+}

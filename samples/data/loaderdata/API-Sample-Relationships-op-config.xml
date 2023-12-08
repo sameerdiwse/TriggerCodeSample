@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<openpagesConfiguration xmlFormatVersion="1.27">
+    <systemAdminMode enabled="true"/>
+    <contentTypeRelationshipSets>
+	<!-- ContentType Relationships -->
+        <contentTypeRelationshipSet name="SOX Object Model" inheritsFrom="">
+		    <contentTypeRelationship parent="KeyRiskIndicator"
+                               child = "KeyRiskIndicatorValue"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "1"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="KeyRiskIndicator"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="KeyRiskIndicator"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="KeyRiskIndicatorValue"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="KeyRiskIndicatorValue"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="LossEvent"
+                               child = "LossImpact"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="LossEvent"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="LossEvent"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="LossImpact"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="LossImpact"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXBusEntity"
+                               child = "KeyRiskIndicator"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXBusEntity"
+                               child = "LossEvent"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXBusEntity"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="SOXBusEntity"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="SOXBusEntity"
+                               child = "SOXIssue"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXBusEntity"
+                               child = "SOXProcess"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXProcess"
+                               child = "SOXRisk"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXProcess"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="SOXProcess"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXRisk"
+                               child = "SOXDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+            <contentTypeRelationship parent="SOXRisk"
+                               child = "SOXExternalDocument"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "0"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+			<contentTypeRelationship parent="SOXRisk"
+                               child = "KeyRiskIndicator"
+                               type="Association"
+                               enabled = "true"
+                               minParents = "1"
+                               maxParents = "2147483647"
+                               minChildren = "0"
+                               maxChildren="2147483647" />
+		</contentTypeRelationshipSet>
+    </contentTypeRelationshipSets>
+    <systemAdminMode enabled="false"/>
+</openpagesConfiguration>
+			
+			

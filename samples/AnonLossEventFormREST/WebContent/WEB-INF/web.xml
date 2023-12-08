@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=============================================================================
+    Licensed Materials - Property of IBM
+
+	OpenPages GRC Platform (PID: 5725-D51)
+	
+	(c) Copyright IBM Corporation 2013 - 2020. All Rights Reserved.
+	
+	US Government Users Restricted Rights- Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+==============================================================================-->
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>LossEventClient</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LossFormController</display-name>
+		<servlet-name>LossFormController</servlet-name>
+		<servlet-class>com.ibm.openpages.api.sample.lossform.LossFormController</servlet-class>
+		<init-param> 
+               <description>This is application host, ie. localhost</description>
+               <param-name>host</param-name>
+               <param-value>localhost</param-value>
+        </init-param> 
+        <init-param>
+               <description>This is application port, ie. 10108(WebSphere)</description>
+               <param-name>port</param-name>
+               <param-value>10108</param-value>
+        </init-param> 
+        <init-param>
+               <description>This is OpenPages username</description>
+               <param-name>user</param-name>
+               <param-value>OpenPagesAdministrator</param-value>
+        </init-param> 
+        <init-param>
+               <description>This is OpenPages password</description>
+               <param-name>password</param-name>
+               <param-value>OpenPagesAdministrator</param-value>
+        </init-param> 
+	</servlet>   
+    <servlet-mapping>
+		<servlet-name>LossFormController</servlet-name>
+		<url-pattern>
+		/LossFormController</url-pattern>
+		<url-pattern>
+		/lossformcontroller</url-pattern>
+		<url-pattern>
+        /lossform</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
